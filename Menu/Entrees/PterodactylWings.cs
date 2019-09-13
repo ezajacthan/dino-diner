@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-public class PterodacytlWings
+public class PterodactylWings
 {
     public double Price { get; set; }
     public uint Calories { get; set; }
@@ -15,7 +16,7 @@ public class PterodacytlWings
         }
     }
 
-    public Brontowurst()
+    public PterodactylWings()
     {
         this.Price = 7.21;
         this.Calories = 318;

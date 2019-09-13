@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Brontowurst
 {
@@ -15,7 +16,7 @@ public class Brontowurst
         {
             List<string> ingredients = new List<string>() { "Brautwurst" };
             if (peppers) ingredients.Add("Peppers");
-            if (onions) ingredients.Add("Onions");
+            if (onions) ingredients.Add("Onion");
             if (bun) ingredients.Add("Whole Wheat Bun");
             return ingredients;
         }
@@ -32,13 +33,13 @@ public class Brontowurst
         this.peppers = false;
     }
 
-    public void HoldOnions()
+    public void HoldOnion()
     {
         this.onions = false;
     }
 
     public void HoldBun()
     {
-        this.buns = false;
+        this.bun = false;
     }
 }

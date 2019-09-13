@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 public class DinoNuggets
 {
@@ -12,7 +14,7 @@ public class DinoNuggets
         get
         {
             List<string> ingredients = new List<string>();
-            for(int i = 0; i>numOfNugs; i++)
+            for(int i = 0; i<numOfNugs; i++)
             {
                 ingredients.Add("Chicken Nugget");
             }
@@ -20,15 +22,17 @@ public class DinoNuggets
         }
     }
 
-    public SteakosaurusBurger()
+    public DinoNuggets()
     {
         this.Price = 4.25;
         this.Calories = (59*numOfNugs);
+        numOfNugs = 6;
     }
 
     public void AddNugget()
     {
         this.Price += .25;
         this.numOfNugs += 1;
+        this.Calories += 59;
     }
 }
