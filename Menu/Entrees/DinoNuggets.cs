@@ -4,11 +4,21 @@ using System.Collections.Generic;
 
 public class DinoNuggets
 {
+    //backing variable
     private uint numOfNugs = 6;
     
+    /// <summary>
+    /// Gets and sets the price
+    /// </summary>
     public double Price { get; set; }
+    /// <summary>
+    /// Gets and sets the calories
+    /// </summary>
     public uint Calories { get; set; }
 
+    /// <summary>
+    /// Gets the list of ingredients
+    /// </summary>
     public List<string> Ingredients
     {
         get
@@ -22,6 +32,9 @@ public class DinoNuggets
         }
     }
 
+    /// <summary>
+    /// Constructs an object of the dino nuggets with the default price, nugget count and calories
+    /// </summary>
     public DinoNuggets()
     {
         this.Price = 4.25;
@@ -29,6 +42,9 @@ public class DinoNuggets
         numOfNugs = 6;
     }
 
+    /// <summary>
+    /// Adds a nugget to the order and changes price and calorie count accordingly
+    /// </summary>
     public void AddNugget()
     {
         this.Price += .25;

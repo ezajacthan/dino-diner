@@ -4,14 +4,25 @@ using System.Collections.Generic;
 
 public class SteakosaurusBurger
 {
+    //backing variables
     private bool bun = true;
     private bool pickle = true;
     private bool ketchup = true;
     private bool mustard = true;
     
+    /// <summary>
+    /// Gets and sets the price
+    /// </summary>
     public double Price { get; set; }
+
+    /// <summary>
+    /// Gets and sets the calories
+    /// </summary>
     public uint Calories { get; set; }
 
+    /// <summary>
+    /// Gets the list of ingredients
+    /// </summary>
     public List<string> Ingredients
     {
         get
@@ -25,25 +36,42 @@ public class SteakosaurusBurger
         }
     }
 
+    /// <summary>
+    /// Constructs an object of the SteakosaurusBurger with default price and calories
+    /// </summary>
     public SteakosaurusBurger()
     {
         this.Price = 5.15;
         this.Calories = 621;
     }
 
+    /// <summary>
+    /// Sets the object such that there is no bun
+    /// </summary>
     public void HoldBun()
     {
         this.bun = false;
     }
 
+    /// <summary>
+    /// Sets the object such that there is no pickle
+    /// </summary>
     public void HoldPickle()
     {
         this.pickle = false;
     }
+
+    /// <summary>
+    /// Sets the object such that there is no ketchup
+    /// </summary>
     public void HoldKetchup()
     {
         this.ketchup = false;
     }
+
+    /// <summary>
+    /// sets the object such that there is no mustard
+    /// </summary>
     public void HoldMustard()
     {
         this.mustard = false;
