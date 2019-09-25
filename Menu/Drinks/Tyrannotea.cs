@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class Tyrannotea : Drink
+    public class Tyrannotea : Drink
     {
         protected Size size;
         protected bool hasLemon = false;
