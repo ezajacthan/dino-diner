@@ -7,8 +7,8 @@ namespace DinoDiner.Menu.Drinks
     public class Tyrannotea : Drink
     {
         protected Size size;
-        protected bool hasLemon = false;
-        protected bool isSweet = false;
+        public bool hasLemon = false;
+        public bool isSweet = false;
 
         public Tyrannotea() : base()
         {
@@ -54,6 +54,13 @@ namespace DinoDiner.Menu.Drinks
             this.isSweet = true;
             Ingredients.Add("Cane Sugar");
             this.Calories = 2 * this.Calories;
+        }
+
+        public void RemoveSugar()
+        {
+            this.isSweet = false;
+            Ingredients.Remove("Cane Sugar");
+            this.Calories = ((this.Calories) / 2);
         }
     }
 }

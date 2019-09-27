@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class JurrasicJava : Drink
+    public class JurrasicJava : Drink
     {
         protected Size size;
-        protected bool RoomForCream =false;
-        protected bool Decaf = false;
+        public bool RoomForCream =false;
+        public bool Decaf = false;
 
 
         public JurrasicJava() : base()

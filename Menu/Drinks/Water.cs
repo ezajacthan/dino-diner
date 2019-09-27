@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Drinks
     public class Water : Drink
     {
         protected Size size;
-        protected bool Lemon= false;
+        public bool Lemon= false;
 
         public Water() : base()
         {
