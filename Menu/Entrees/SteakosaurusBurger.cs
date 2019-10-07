@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Represents the Steakosaurus Burger menu item
+    /// </summary>
     public class SteakosaurusBurger:Entree
     {
         //backing variables
@@ -68,6 +71,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             this.mustard = false;
+        }
+
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
         }
     }
 }

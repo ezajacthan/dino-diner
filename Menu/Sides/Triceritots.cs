@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Represents the triceritots menu item
+    /// </summary>
     public class Triceritots : Side
     {
         //backing variable
@@ -46,6 +49,23 @@ namespace DinoDiner.Menu.Sides
             {
                 return this.size;
             }
+        }
+
+        /// <summary>
+        /// Creates the string representation for the object
+        /// </summary>
+        /// <returns>the string interpretation of the object</returns>
+        public override string ToString()
+        {
+            if (this.Size == Size.Small)
+            {
+                return "Small Triceritots";
+            }
+            else if (this.Size == Size.Medium)
+            {
+                return "Medium Triceritots";
+            }
+            else return "Large Triceritots";
         }
     }
 }

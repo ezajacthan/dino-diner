@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// represents the mezzorella sticks menu item
+    /// </summary>
     public class MezzorellaSticks : Side
     {
         //backing variable
@@ -46,6 +49,23 @@ namespace DinoDiner.Menu.Sides
             {
                 return this.size;
             }
+        }
+
+        /// <summary>
+        /// Creates the string representation for the object
+        /// </summary>
+        /// <returns>the string interpretation of the object</returns>
+        public override string ToString()
+        {
+            if (this.Size == Size.Small)
+            {
+                return "Small Mezzorella Sticks";
+            }
+            else if (this.Size == Size.Medium)
+            {
+                return "Medium Mezzorella Sticks";
+            }
+            else return "Large Mezzorella Sticks";
         }
     }
 }

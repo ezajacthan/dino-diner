@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Represents the T Rex King Burger menu item
+    /// </summary>
     public class TRexKingBurger: Entree
     {
         //backing variables
@@ -108,6 +111,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.mayo = false;
+        }
+
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

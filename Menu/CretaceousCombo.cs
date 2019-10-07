@@ -33,7 +33,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return "";
+            return this.Entree.ToString() + " Combo";
         }
 
         public List<string> Ingredients
@@ -57,5 +57,7 @@ namespace DinoDiner.Menu
         }
 
         private CretaceousCombo() { }
+
+        
     }
 }

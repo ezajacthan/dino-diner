@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Represents a velociwrap menu item
+    /// </summary>
     public class VelociWrap : Entree
     {
         //backing variables
@@ -60,6 +63,9 @@ namespace DinoDiner.Menu.Entrees
             this.cheese = false;
         }
 
-
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
+        }
     }
 }

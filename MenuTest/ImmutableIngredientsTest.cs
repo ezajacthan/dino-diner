@@ -1,6 +1,9 @@
 ﻿using System;
 using Xunit;
 using DinoDiner.Menu;
+using DinoDiner.Menu.Sides;
+using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu.Entrees;
 
 namespace MenuTest
 {
@@ -20,7 +23,7 @@ namespace MenuTest
         [InlineData(typeof(MezzorellaSticks))]
         [InlineData(typeof(Tyrannotea))]
         [InlineData(typeof(Sodasaurus))]
-        [InlineData(typeof(JurassicJava))]
+        [InlineData(typeof(JurrasicJava))]
         [InlineData(typeof(Water))]
         public void IngredientsShouldBeImmutable(Type type)
         {

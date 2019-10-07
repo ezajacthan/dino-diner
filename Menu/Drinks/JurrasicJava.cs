@@ -4,13 +4,18 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Class to represent the jurrasic java menu item
+    /// </summary>
     public class JurrasicJava : Drink
     {
         protected Size size;
         public bool RoomForCream =false;
-        public bool Decaf = false;
+        public bool decaf = false;
 
-
+        /// <summary>
+        /// no argument constructor
+        /// </summary>
         public JurrasicJava() : base()
         {
             this.Price = .59;
@@ -19,6 +24,9 @@ namespace DinoDiner.Menu.Drinks
             this.Ice = false;
         }
 
+        /// <summary>
+        /// override for the size property
+        /// </summary>
         public override Size Size
         {
             set
@@ -45,16 +53,59 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Leaves room for cream in the coffee
+        /// </summary>
         public void LeaveRoomForCream()
         {
             this.RoomForCream = true;
             Ingredients.Add("Cream");
         }
 
+        /// <summary>
+        /// Adds ice to the coffee
+        /// </summary>
         public void AddIce()
         {
             this.Ice = true;
             Ingredients.Add("Ice");
+        }
+
+        public void Decaf()
+        {
+            this.decaf = true;
+        }
+
+        /// <summary>
+        /// Creates the string representation for the object
+        /// </summary>
+        /// <returns>the string interpretation of the object</returns>
+        public override string ToString()
+        {
+            if (this.Size == Size.Small)
+            {
+                if(decaf)
+                {
+                    return "Small Decaf Jurassic Java";
+                }
+                else return "Small Jurassic Java";
+            }
+            else if (this.Size == Size.Medium)
+            {
+                if (decaf)
+                {
+                    return "Medium Decaf Jurassic Java";
+                }
+                else return "Medium Jurassic Java";
+            }
+            else
+            {
+                if (decaf)
+                {
+                    return "Large Decaf Jurassic Java";
+                }
+                else return "Large Jurassic Java";
+            }
         }
     }
 }

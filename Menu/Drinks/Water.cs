@@ -4,11 +4,17 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Represents a water order for the diner
+    /// </summary>
     public class Water : Drink
     {
         protected Size size;
         public bool Lemon= false;
 
+        /// <summary>
+        /// No argument constructor
+        /// </summary>
         public Water() : base()
         {
             this.Price = .1;
@@ -16,6 +22,9 @@ namespace DinoDiner.Menu.Drinks
             this.Ingredients = new List<string>() { "Water" };
         }
 
+        /// <summary>
+        /// Override of the size property
+        /// </summary>
         public override Size Size
         {
             set
@@ -28,10 +37,30 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Adds lemon to the water
+        /// </summary>
         public void AddLemon()
         {
             this.Lemon = true;
             Ingredients.Add("Lemon");
+        }
+
+        /// <summary>
+        /// Creates the string representation for the object
+        /// </summary>
+        /// <returns>the string interpretation of the object</returns>
+        public override string ToString()
+        {
+            if (this.Size == Size.Small)
+            {
+                return "Small Water";
+            }
+            else if (this.Size == Size.Medium)
+            {
+                return "Medium Water";
+            }
+            else return "Large Water";
         }
     }
 }

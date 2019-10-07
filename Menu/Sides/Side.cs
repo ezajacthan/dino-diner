@@ -4,8 +4,10 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
-    public abstract class Side
+    /// <summary>
+    /// Represents a generic side on the menu
+    /// </summary>
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// Gets and sets the price

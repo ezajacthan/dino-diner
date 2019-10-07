@@ -2,6 +2,9 @@
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// represents a Prehistoric PBJ menu item
+    /// </summary>
     public class PrehistoricPBJ :Entree
     {
         //backing variables
@@ -46,6 +49,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.jelly = false;
+        }
+
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
     }
 }

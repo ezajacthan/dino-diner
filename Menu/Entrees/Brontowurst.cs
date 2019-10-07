@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Represents the Brontowurst menu item
+    /// </summary>
     public class Brontowurst:Entree
     {
         //backing variables
@@ -57,6 +60,11 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+        }
+
+        public override string ToString()
+        {
+            return "Brontowurst";
         }
     }
 }

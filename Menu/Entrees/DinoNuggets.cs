@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Represents the DinoNuggets menu item
+    /// </summary>
     public class DinoNuggets:Entree
     {
         //backing variable
@@ -43,6 +46,11 @@ namespace DinoDiner.Menu.Entrees
             this.Price += .25;
             this.numOfNugs += 1;
             this.Calories += 59;
+        }
+
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }
