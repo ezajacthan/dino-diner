@@ -1,4 +1,4 @@
-﻿<Page x:Class="PointOfSale.ComboSelection"
+﻿<Page x:Class="PointOfSale.EntreeSelection"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ComboSelection">
+      Title="EntreeSelection">
 
     <Grid>
         <Grid.Resources>
@@ -31,16 +31,16 @@
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/Brontowurst.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Brontowurst Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Brontowurst</TextBlock>
         </Button>
         <Button Grid.Column="1" FontWeight="UltraBold">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/DinoNuggets.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Dino-Nuggets Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Dino-Nuggets</TextBlock>
         </Button>
         <Button Grid.Column="2" FontWeight="UltraBold">
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Prehistoric PB&amp;J Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Prehistoric PB&amp;J</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/PrehistoricPBJ.png"></ImageBrush>
             </Button.Background>
@@ -49,25 +49,26 @@
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/PterodactylWings.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Pterodactyl Wings Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Pterodactyl Wings</TextBlock>
         </Button>
         <Button Grid.Row="1" Grid.Column="1" FontWeight="UltraBold">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/SteakosaurusBurger.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Steakosaurus Burger Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Steakosaurus Burger</TextBlock>
         </Button>
         <Button Grid.Row="1" Grid.Column="2" FontWeight="UltraBold">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/TRexKingBurger.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">T-Rex King Burger Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">T-Rex King Burger</TextBlock>
         </Button>
         <Button Grid.Row="2" FontWeight="UltraBold">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/Velociwrap.png"></ImageBrush>
             </Button.Background>
-            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Veloci-Wrap Combo</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Veloci-Wrap</TextBlock>
         </Button>
     </Grid>
+
 </Page>
