@@ -24,25 +24,25 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Margin="10">
+            <Button Margin="10" Click="SodaClicked">
                 <Button.Background>
                     <ImageBrush Opacity =".7" ImageSource ="Photos/Sodasaurus.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Sodasaurus</TextBlock>
             </Button>
-            <Button Grid.Row="1" Margin="10">
+            <Button Grid.Row="1" Margin="10" Click="TeaClicked">
                 <Button.Background>
                     <ImageBrush  Opacity =".7" ImageSource ="Photos/Tyrannotea.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Tyrannotea</TextBlock>
             </Button>
-            <Button Grid.Row="2" Margin="10">
+            <Button Grid.Row="2" Margin="10" Click="JavaClicked">
                 <Button.Background>
                     <ImageBrush Opacity =".7" ImageSource ="Photos/JurassicJava.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Jurassic Java</TextBlock>
             </Button>
-            <Button Grid.Row="3" Margin ="10">
+            <Button Grid.Row="3" Margin ="10" Click="WaterClicked">
                 <Button.Background>
                     <ImageBrush Opacity =".7" ImageSource ="Photos/Water.png"></ImageBrush>
                 </Button.Background>
@@ -75,18 +75,16 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Margin="10">
+            <Button Margin="10" x:Name="SpecialtyButton">
                 <StackPanel>
-                    <TextBlock Height="25"><TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Sweet</TextBlock></TextBlock>
-                    <TextBlock Height="25"><TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Decaf</TextBlock></TextBlock>
                     <TextBlock Height="25"><TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Flavor</TextBlock></TextBlock>
                 </StackPanel>
                 
             </Button>
-            <Button Grid.Row="1" Margin="10">
-                <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Add Lemon</TextBlock>
+            <Button Grid.Row="1" Margin="10" IsEnabled="False" x:Name="LemonButton">
+                <TextBlock Grid.Column="0"  Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Add Lemon</TextBlock>
             </Button>
-            <Button Grid.Row="2" Margin="10">
+            <Button Grid.Row="2" Margin="10" x:Name="IceButton">
                 <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Hold Ice</TextBlock>
             </Button>
         </Grid>

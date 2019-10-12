@@ -19,10 +19,10 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Margin ="50">
+            <Button Margin ="50" Click="SideClicked">
                 <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Fryceritops</TextBlock>
             </Button>
-            <Button Grid.Column="1" Margin="50">
+            <Button Grid.Column="1" Margin="50" Click="DrinkClicked">
                 <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Sodasaurus</TextBlock>
             </Button>
         </Grid>

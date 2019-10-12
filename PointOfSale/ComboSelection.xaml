@@ -27,43 +27,43 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button FontWeight="UltraBold">
+        <Button FontWeight="UltraBold" Click="ComboClicked">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/Brontowurst.png"></ImageBrush>
             </Button.Background>
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Brontowurst Combo</TextBlock>
         </Button>
-        <Button Grid.Column="1" FontWeight="UltraBold">
+        <Button Grid.Column="1" FontWeight="UltraBold" Click="ComboClicked">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/DinoNuggets.png"></ImageBrush>
             </Button.Background>
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Dino-Nuggets Combo</TextBlock>
         </Button>
-        <Button Grid.Column="2" FontWeight="UltraBold">
+        <Button Grid.Column="2" FontWeight="UltraBold" Click="ComboClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Prehistoric PB&amp;J Combo</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/PrehistoricPBJ.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button Grid.Row="1" FontWeight="UltraBold">
+        <Button Grid.Row="1" FontWeight="UltraBold" Click="ComboClicked">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/PterodactylWings.png"></ImageBrush>
             </Button.Background>
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Pterodactyl Wings Combo</TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="1" FontWeight="UltraBold">
+        <Button Grid.Row="1" Grid.Column="1" FontWeight="UltraBold" Click="ComboClicked">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/SteakosaurusBurger.png"></ImageBrush>
             </Button.Background>
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Steakosaurus Burger Combo</TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="2" FontWeight="UltraBold">
+        <Button Grid.Row="1" Grid.Column="2" FontWeight="UltraBold" Click="ComboClicked">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/TRexKingBurger.png"></ImageBrush>
             </Button.Background>
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">T-Rex King Burger Combo</TextBlock>
         </Button>
-        <Button Grid.Row="2" FontWeight="UltraBold">
+        <Button Grid.Row="2" FontWeight="UltraBold" Click="ComboClicked">
             <Button.Background>
                 <ImageBrush ImageSource ="Photos/Velociwrap.png"></ImageBrush>
             </Button.Background>

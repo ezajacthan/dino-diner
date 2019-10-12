@@ -32,7 +32,7 @@ namespace PointOfSale
 
         private void EntreesClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+            NavigationService.Navigate(new EntreeSelection());
         }
 
         private void DrinksClicked(object sender, RoutedEventArgs args)
@@ -42,7 +42,7 @@ namespace PointOfSale
 
         private void SidesClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+            NavigationService.Navigate(new SideSelection());
         }
     }
 }
