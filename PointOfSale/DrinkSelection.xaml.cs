@@ -27,17 +27,18 @@ namespace PointOfSale
         private void WaterClicked(object sender, RoutedEventArgs args)
         {
             IceButton.Content = "Hold Ice";
+            IceButton.IsEnabled = true;
             LemonButton.IsEnabled = true;
-            LemonButton.Content = "Lemon";
+            LemonButton.Content = "Add Lemon";
             SpecialtyButton.Content = "";
             SpecialtyButton.IsEnabled = false;
         }
 
         private void JavaClicked(object sender, RoutedEventArgs args)
         {
-            IceButton.Content = "AddIce";
+            IceButton.Content = "Add Ice";
             IceButton.IsEnabled = true;
-            LemonButton.Content = "Sweet";
+            LemonButton.Content = "Room for Cream";
             LemonButton.IsEnabled = true;
             SpecialtyButton.Content = "Decaf";
             SpecialtyButton.IsEnabled = true;
@@ -61,6 +62,14 @@ namespace PointOfSale
             LemonButton.Content = "";
             SpecialtyButton.Content = "Flavor";
             SpecialtyButton.IsEnabled = true;
+        }
+        
+        private void SpecialtyButtonClicked(object sender, RoutedEventArgs args)
+        {
+            if(SpecialtyButton.Content == "Flavor")
+            {
+                NavigationService.Navigate(new FlavorSelection());
+            }
         }
     }
 }

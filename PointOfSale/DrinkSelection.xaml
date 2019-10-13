@@ -75,9 +75,9 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Margin="10" x:Name="SpecialtyButton">
+            <Button Margin="10" x:Name="SpecialtyButton" Click ="SpecialtyButtonClicked">
                 <StackPanel>
-                    <TextBlock Height="25"><TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Flavor</TextBlock></TextBlock>
+                    <TextBlock Height="25"><TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite" >Flavor</TextBlock></TextBlock>
                 </StackPanel>
                 
             </Button>
