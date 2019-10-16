@@ -14,6 +14,7 @@ namespace DinoDiner.Menu.Entrees
         private bool cheese = true;
 
        
+
         /// <summary>
         /// Gets the list of ingredients
         /// </summary>
@@ -27,6 +28,18 @@ namespace DinoDiner.Menu.Entrees
                 if (dressing) ingredients.Add("Ceasar Dressing");
                 if (cheese) ingredients.Add("Parmesan Cheese");
                 return ingredients;
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> sp = new List<string>();
+                if (!lettuce) sp.Add("Hold Lettuce");
+                if (!dressing) sp.Add("Hold Dressing");
+                if (!cheese) sp.Add("Hold Cheese");
+                return sp.ToArray();
             }
         }
 

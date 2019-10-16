@@ -41,6 +41,26 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
+        /// Gets the special instructions of the Trex burger
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> sp = new List<string>();
+                if (!lettuce) sp.Add("Hold Lettuce");
+                if (!onion) sp.Add("Hold Onion");
+                if (!bun) sp.Add("Hold Bun");
+                if (!tomato) sp.Add("Hold Tomato");
+                if (!pickle) sp.Add("Hold Pickle");
+                if (!ketchup) sp.Add("Hold Ketchup");
+                if (!mustard) sp.Add("Hold Mustard");
+                if (!mayo) sp.Add("Hold Mayo");
+                return sp.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Constructs an object of the TRexKingBurger with default calories and price
         /// </summary>
         public TRexKingBurger()

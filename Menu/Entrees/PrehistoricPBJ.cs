@@ -1,16 +1,36 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// represents a Prehistoric PBJ menu item
     /// </summary>
-    public class PrehistoricPBJ :Entree
+    public class PrehistoricPBJ : Entree ,IOrderItem, INotifyPropertyChanged
     {
         //backing variables
         private bool peanutButter = true;
         private bool jelly = true;
-
+        
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if(!peanutButter)
+                {
+                    special.Add("Hold Peanut Butter");
+                }
+                if(!jelly)
+                {
+                    special.Add("Hold Jelly");
+                }
+                return special.ToArray();
+            }
+        }
         
         /// <summary>
         /// Gets the list of ingredients
@@ -36,11 +56,24 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
+        /// The PropertyChanged event handler; notifies of changes to the price, description and special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //Helper function for event handler
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
         /// Sets the object such that there is no peanut butter
         /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -49,6 +82,8 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         public override string ToString()

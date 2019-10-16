@@ -1,15 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
     /// Class to represent a Sodasaurus menu item
     /// </summary>
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink//, IOrderItem, INotifyPropertyChanged
     {
         protected Size size;
+
+        /// <summary>
+        /// Gets the special instructions for this menu item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
 
         /// <summary>
         /// Holds the flavor of the sodasaurus

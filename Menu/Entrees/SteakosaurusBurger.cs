@@ -14,7 +14,21 @@ namespace DinoDiner.Menu.Entrees
         private bool ketchup = true;
         private bool mustard = true;
 
-        
+        /// <summary>
+        /// Gets the special instructions for the steakosaurus
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> sp = new List<string>();
+                if (!bun) sp.Add("Hold Bun");
+                if (!pickle) sp.Add("Hold Pickle");
+                if (!ketchup) sp.Add("Hold Ketchup");
+                if (!mustard) sp.Add("Hold Mustard");
+                return sp.ToArray();
+            }
+        }
 
         /// <summary>
         /// Gets the list of ingredients

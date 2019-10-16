@@ -37,6 +37,17 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                List<string> sp = new List<string>();
+                if (Lemon) sp.Add("Lemon");
+                if (!Ice) sp.Add("Hold Ice");
+                return sp.ToArray();
+            }
+        }
+
         /// <summary>
         /// Adds lemon to the water
         /// </summary>

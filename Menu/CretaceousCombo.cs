@@ -33,7 +33,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return this.Entree.ToString() + " Combo";
+            return $"{Entree} Combo";
         }
 
         public List<string> Ingredients
@@ -58,6 +58,27 @@ namespace DinoDiner.Menu
 
         private CretaceousCombo() { }
 
-        
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                Ingredients.AddRange(Entree.Special);
+                Ingredients.Add(Side.ToString());
+                Ingredients.AddRange(Side.Special);
+                Ingredients.Add(Drink.ToString());
+                Ingredients.AddRange(Drink.Special);
+
+                return special.ToArray();                    
+            }
+        }
     }
 }

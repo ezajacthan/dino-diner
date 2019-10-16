@@ -52,6 +52,17 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (hasLemon) special.Add("Lemon");
+                if (isSweet) special.Add("Sweet");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Adds lemon to the tea order
         /// </summary>

@@ -22,6 +22,14 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
+        }
+        
         /// <summary>
         /// Constructs an object of the PterodactylWings with default price and calories
         /// </summary>

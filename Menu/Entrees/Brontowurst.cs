@@ -29,6 +29,18 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                List<string> sp = new List<string>();
+                if (!peppers) sp.Add("Hold Peppers");
+                if (!onions) sp.Add("Hold Onions");
+                if (!bun) sp.Add("Hold Bun");
+                return sp.ToArray();
+            }
+        }
+
         /// <summary>
         /// Constructs a new object of the Brontowurst with the default price and calories
         /// </summary>

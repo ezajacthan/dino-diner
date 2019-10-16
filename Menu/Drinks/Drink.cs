@@ -5,7 +5,7 @@ using System.Text;
 namespace DinoDiner.Menu.Drinks
 {
 
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -28,6 +28,22 @@ namespace DinoDiner.Menu.Drinks
         public abstract Size Size { get; set; }
 
         public bool Ice { get; set; } = true;
+
+        /// <summary>
+        /// The description of the drink
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// The special instructions of the drink
+        /// </summary>
+        public abstract string[] Special { get; }
 
         public void HoldIce()
         {

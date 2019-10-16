@@ -10,6 +10,7 @@ namespace DinoDiner.Menu.Entrees
     {
         //backing variable
         private uint numOfNugs = 6;
+        private uint extraNugs = 0;
 
        
         /// <summary>
@@ -25,6 +26,22 @@ namespace DinoDiner.Menu.Entrees
                     ingredients.Add("Chicken Nugget");
                 }
                 return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Gets special instructions for the dino nuggets
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> sp = new List<string>();
+                for (int i = 0; i<extraNugs; i++)
+                {
+                    sp.Add("Add Nugget");
+                }
+                return sp.ToArray();
             }
         }
 
@@ -46,6 +63,7 @@ namespace DinoDiner.Menu.Entrees
             this.Price += .25;
             this.numOfNugs += 1;
             this.Calories += 59;
+            this.extraNugs++;
         }
 
         public override string ToString()

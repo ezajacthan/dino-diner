@@ -24,6 +24,18 @@ namespace DinoDiner.Menu.Drinks
             this.Ice = false;
         }
 
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (RoomForCream) special.Add("Room For Cream");
+                if (Ice) special.Add("Ice");
+                if (decaf) special.Add("Decaf");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// override for the size property
         /// </summary>
