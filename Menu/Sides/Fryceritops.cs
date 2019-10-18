@@ -19,7 +19,6 @@ namespace DinoDiner.Menu.Sides
         {
             this.Price = 0.99;
             this.Calories = 222;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         }
 
         /// <summary>
@@ -48,6 +47,14 @@ namespace DinoDiner.Menu.Sides
             get
             {
                 return this.size;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+              return new List<string>() { "Potato", "Salt", "Vegetable Oil" };
             }
         }
 

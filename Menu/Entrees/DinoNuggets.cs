@@ -37,10 +37,7 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> sp = new List<string>();
-                for (int i = 0; i<extraNugs; i++)
-                {
-                    sp.Add("Add Nugget");
-                }
+                if (extraNugs != 0) sp.Add(extraNugs + " Nuggets");
                 return sp.ToArray();
             }
         }

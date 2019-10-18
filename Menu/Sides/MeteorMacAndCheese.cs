@@ -19,7 +19,6 @@ namespace DinoDiner.Menu.Sides
         {
             this.Price = 0.99;
             this.Calories = 420;
-            this.Ingredients = new List<string>() { "Cheese Product", "Macaroni Noodles", "Pork Sausage" };
         }
 
         /// <summary>
@@ -51,10 +50,18 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
-            /// <summary>
-            /// Creates the string representation for the object
-            /// </summary>
-            /// <returns>the string interpretation of the object</returns>
+        public override List<string> Ingredients
+        {
+            get
+            {
+              return new List<string>() { "Cheese Product", "Macaroni Noodles", "Pork Sausage" };
+            }
+        }
+
+        /// <summary>
+        /// Creates the string representation for the object
+        /// </summary>
+        /// <returns>the string interpretation of the object</returns>
         public override string ToString()
         {
             if (this.Size == Size.Small)

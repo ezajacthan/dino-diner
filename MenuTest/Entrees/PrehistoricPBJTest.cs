@@ -113,6 +113,13 @@ namespace MenuTest.Entrees
                 Assert.Equal("Hold Jelly", item);
             });
         }
+
+        [Fact]
+        public void PrehistoricPBJDescriptionShouldGiveName()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Equal("Prehistoric PB&J", pbj.Description);
+        }
     }
 
 }

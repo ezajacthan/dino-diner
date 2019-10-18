@@ -48,14 +48,14 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> sp = new List<string>();
-                if (!lettuce) sp.Add("Hold Lettuce");
-                if (!onion) sp.Add("Hold Onion");
-                if (!bun) sp.Add("Hold Bun");
-                if (!tomato) sp.Add("Hold Tomato");
-                if (!pickle) sp.Add("Hold Pickle");
                 if (!ketchup) sp.Add("Hold Ketchup");
                 if (!mustard) sp.Add("Hold Mustard");
+                if (!bun) sp.Add("Hold Bun");
+                if (!pickle) sp.Add("Hold Pickle");
+                if (!lettuce) sp.Add("Hold Lettuce");
                 if (!mayo) sp.Add("Hold Mayo");
+                if (!onion) sp.Add("Hold Onion");
+                if (!tomato) sp.Add("Hold Tomato");
                 return sp.ToArray();
             }
         }

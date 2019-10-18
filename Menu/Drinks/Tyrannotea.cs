@@ -20,7 +20,6 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Price = .99;
             this.Calories = 8;
-            this.Ingredients = new List<string>() { "Water", "Tea" };
         }
 
         /// <summary>
@@ -60,6 +59,14 @@ namespace DinoDiner.Menu.Drinks
                 if (hasLemon) special.Add("Lemon");
                 if (isSweet) special.Add("Sweet");
                 return special.ToArray();
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Water", "Tea" };
             }
         }
 

@@ -37,7 +37,6 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Price = 1.50;
             this.Calories = 112;
-            this.Ingredients = new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
         }
 
         /// <summary>
@@ -66,6 +65,14 @@ namespace DinoDiner.Menu.Drinks
             get
             {
                 return this.size;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+               return new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
             }
         }
 
