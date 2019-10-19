@@ -29,7 +29,7 @@ namespace DinoDiner.Menu.Drinks
             {
                 List<string> special = new List<string>();
                 if (RoomForCream) special.Add("Room For Cream");
-                if (Ice) special.Add("Ice");
+                if (Ice) special.Add("Add Ice");
                 if (decaf) special.Add("Decaf");
                 return special.ToArray();
             }

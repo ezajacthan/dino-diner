@@ -245,5 +245,65 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Lemon", t.Ingredients);
             Assert.Equal<int>(3, t.Ingredients.Count);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialByDefault()
+        {
+            Tyrannotea t = new Tyrannotea();
+            Assert.Empty(t.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldAddLemon()
+        {
+            Tyrannotea t = new Tyrannotea();
+            s.addLemon();
+            Assert.Collection<string>(j.Special, item =>
+            {
+                Assert.Equal("Add Lemon", item);
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldMakeSweet()
+        {
+            Tyrannotea t = new Tyrannotea();
+            s.AddSugar();
+            Assert.Collection<string>(j.Special, item =>
+            {
+                Assert.Equal("Sweet", item);
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldAddLemon()
+        {
+            Tyrannotea t = new Tyrannotea();
+            s.addLemon();
+            Assert.Collection<string>(j.Special, item =>
+            {
+                Assert.Equal("Add Lemon", item);
+            },
+            item =>
+            {
+                Assert.Equal("Sweet");
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void TyrannoTeaDescriptionShouldGiveNameForSizeAndSweetness(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Size = size;
+            tea.isSweet = sweet;
+            if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.Description);
+            else Assert.Equal($"{size} Tyrannotea", tea.Description);
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace DinoDiner.Menu.Drinks
             get
             {
                 List<string> sp = new List<string>();
-                if (Lemon) sp.Add("Lemon");
+                if (Lemon) sp.Add("Add Lemon");
                 if (!Ice) sp.Add("Hold Ice");
                 return sp.ToArray();
             }

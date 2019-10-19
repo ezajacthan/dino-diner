@@ -56,7 +56,7 @@ namespace DinoDiner.Menu.Drinks
             get
             {
                 List<string> special = new List<string>();
-                if (hasLemon) special.Add("Lemon");
+                if (hasLemon) special.Add("Add Lemon");
                 if (isSweet) special.Add("Sweet");
                 return special.ToArray();
             }
