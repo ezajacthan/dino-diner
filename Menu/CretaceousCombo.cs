@@ -4,14 +4,58 @@ using System.Text;
 using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Sides;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo: INotifyPropertyChanged
     {
-        public Entree Entree { get; set; }
-        public Drink Drink { get; set; }
-        public Side Side { get; set; }
+        //backing variables
+        private Entree entree;
+        private Drink drink;
+        private Side side;
+
+        public Entree Entree
+        {
+            get
+            {
+                return this.entree;
+            }
+            set
+            {
+                this.entree = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Special");
+            }
+        }
+        public Drink Drink
+        {
+            get
+            {
+                return this.drink;
+            }
+            set
+            {
+                this.drink = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
+
+            }
+        }
+        public Side Side
+        {
+            get
+            {
+                return this.side;
+            }
+            set
+            {
+                this.side = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
+            }
+        }
 
         private Size size= Size.Small;
         public Size Size
@@ -24,6 +68,17 @@ namespace DinoDiner.Menu
                 Drink.Size = value;
                 Side.Size = value;
             }
+        }
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes to the price, description and special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //Helper function for event handler
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public double Price

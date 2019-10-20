@@ -44,6 +44,8 @@ namespace DinoDiner.Menu.Drinks
                         this.size = Size.Small;
                         break;
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
             get
             {
@@ -77,6 +79,7 @@ namespace DinoDiner.Menu.Drinks
         {
             this.hasLemon = true;
             Ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace DinoDiner.Menu.Drinks
             this.isSweet = true;
             Ingredients.Add("Cane Sugar");
             this.Calories = 2 * this.Calories;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -97,6 +101,7 @@ namespace DinoDiner.Menu.Drinks
             this.isSweet = false;
             Ingredients.Remove("Cane Sugar");
             this.Calories = ((this.Calories) / 2);
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

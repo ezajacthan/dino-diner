@@ -54,18 +54,7 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 6.52;
             this.Calories = 483;
         }
-
-        /// <summary>
-        /// The PropertyChanged event handler; notifies of changes to the price, description and special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        //Helper function for event handler
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
+        
         /// <summary>
         /// Sets the object such that there is no peanut butter
         /// </summary>

@@ -57,6 +57,8 @@ namespace DinoDiner.Menu.Drinks
                         this.size = Size.Small;
                         break;
                 }
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Price");
             }
             get
             {
@@ -80,6 +82,7 @@ namespace DinoDiner.Menu.Drinks
         {
             this.RoomForCream = true;
             Ingredients.Add("Cream");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -89,11 +92,13 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Ice = true;
             Ingredients.Add("Ice");
+            NotifyOfPropertyChange("Special");
         }
 
         public void Decaf()
         {
             this.decaf = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>

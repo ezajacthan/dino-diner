@@ -43,6 +43,8 @@ namespace DinoDiner.Menu.Sides
                         this.size = Size.Small;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Description");
             }
             get
             {

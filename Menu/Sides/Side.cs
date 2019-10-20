@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu.Sides
 {
@@ -47,5 +48,17 @@ namespace DinoDiner.Menu.Sides
         {
             get { return new string[0]; }
         }
+
+        /// <summary>
+        /// The PropertyChanged event handler; notifies of changes to the price, description and special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //Helper function for event handler
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }

@@ -12,6 +12,9 @@ namespace DinoDiner.Menu.Drinks
     {
         protected Size size;
 
+        //backing variable
+        private SodasaurusFlavor flavor;
+
         /// <summary>
         /// Gets the special instructions for this menu item
         /// </summary>
@@ -28,7 +31,18 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Holds the flavor of the sodasaurus
         /// </summary>
-        public SodasaurusFlavor Flavor { get; set; }
+        public SodasaurusFlavor Flavor
+        {
+            get
+            {
+               return flavor;
+            }
+            set
+            {
+                this.flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// No argument constructor
@@ -61,6 +75,8 @@ namespace DinoDiner.Menu.Drinks
                         this.size = Size.Small;
                         break;
                 }
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Price");
             }
             get
             {
