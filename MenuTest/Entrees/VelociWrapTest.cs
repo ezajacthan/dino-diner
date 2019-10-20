@@ -173,5 +173,35 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             Assert.Equal("Veloci-Wrap", vw.Description);
         }
+
+        [Fact]
+        public void HoldCheeseShouldNotifyOfSpecialPropertyChange()
+        {
+            Velociwrap v = new Velociwrap();
+            Assert.PropertyChanged(v, "Special", () =>
+            {
+                v.HoldCheese();
+            });
+        }
+
+        [Fact]
+        public void HoldDressingShouldNotifyOfSpecialPropertyChange()
+        {
+            Velociwrap v = new Velociwrap();
+            Assert.PropertyChanged(v, "Special", () =>
+            {
+                v.HoldDressing();
+            });
+        }
+
+        [Fact]
+        public void HoldLettuceShouldNotifyOfSpecialPropertyChange()
+        {
+            Velociwrap v = new Velociwrap();
+            Assert.PropertyChanged(v, "Special", () =>
+            {
+                v.HoldLettuce();
+            });
+        }
     }
 }

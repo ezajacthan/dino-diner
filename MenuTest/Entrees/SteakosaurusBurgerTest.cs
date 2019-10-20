@@ -214,6 +214,46 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             Assert.Equal("Steakosaurus Burger", sb.Description);
         }
+
+        [Fact]
+        public void HoldKetchupShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger b = new SteakosaurusBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldKetchup();
+            });
+        }
+
+        [Fact]
+        public void HoldMustardShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger b = new SteakosaurusBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.MoldMustard();
+            });
+        }
+
+        [Fact]
+        public void HoldBunShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger b = new SteakosaurusBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldBun();
+            });
+        }
+
+        [Fact]
+        public void HoldPickleShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger b = new SteakosaurusBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldPickle();
+            });
+        }
     }
 
 }

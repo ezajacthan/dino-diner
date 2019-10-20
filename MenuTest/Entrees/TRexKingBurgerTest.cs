@@ -320,6 +320,86 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             Assert.Equal("T-Rex King Burger", trex.Description);
         }
+
+        [Fact]
+        public void HoldKetchupShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldKetchup();
+            });
+        }
+
+        [Fact]
+        public void HoldMustardShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldMustard();
+            });
+        }
+
+        [Fact]
+        public void HoldMayoShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldMayo();
+            });
+        }
+
+        [Fact]
+        public void HoldBunShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldBun();
+            });
+        }
+
+        [Fact]
+        public void HoldPickleShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldPickle();
+            });
+        }
+
+        [Fact]
+        public void HoldLettuceShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldLettuce();
+            });
+        }
+
+        [Fact]
+        public void HoldTomatoShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldTomato();
+            });
+        }
+
+        [Fact]
+        public void HoldOnionShouldNotifyOfSpecialPropertyChange()
+        {
+            TRexKingBurger b = new TRexKingBurger();
+            Assert.PropertyChanged(b, "Special", () =>
+            {
+                b.HoldOnion();
+            });
+        }
     }
 
 }

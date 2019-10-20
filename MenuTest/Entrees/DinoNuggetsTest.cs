@@ -125,5 +125,35 @@ namespace MenuTest.Entrees
             DinoNuggets dn = new DinoNuggets();
             Assert.Equal("Dino-Nuggets", dn.Description);
         }
+
+        [Fact]
+        public void AddNuggetShouldNotifyOfSpecialPropertyChange()
+        {
+            DinoNuggets d = new DinoNuggets();
+            Assert.PropertyChanged(d, "Special", () =>
+            {
+                d.AddNugget();
+            });
+        }
+
+        [Fact]
+        public void AddNuggetShouldNotifyOfPricePropertyChange()
+        {
+            DinoNuggets d = new DinoNuggets();
+            Assert.PropertyChanged(d, "Price", () =>
+            {
+                d.AddNugget();
+            });
+        }
+
+        [Fact]
+        public void AddNuggetShouldNotifyOfDescriptionPropertyChange()
+        {
+            DinoNuggets d = new DinoNuggets();
+            Assert.PropertyChanged(d, "Description", () =>
+            {
+                d.AddNugget();
+            });
+        }
     }
 }
