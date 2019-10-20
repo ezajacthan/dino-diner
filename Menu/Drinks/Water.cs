@@ -11,6 +11,7 @@ namespace DinoDiner.Menu.Drinks
     {
         protected Size size;
         public bool Lemon= false;
+        private List<string> ingredients = new List<string>() { "Water" };
 
         /// <summary>
         /// No argument constructor
@@ -19,7 +20,6 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Price = .1;
             this.Calories = 0;
-            //this.Ingredients = new List<string>() { "Water" };
         }
 
         /// <summary>
@@ -52,7 +52,12 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                return new List<string>() { "Water" };
+                List<string> returnList = new List<string>();
+                foreach (string s in ingredients)
+                {
+                    returnList.Add(s);
+                }
+                return returnList;
             }
         }
 
@@ -62,7 +67,7 @@ namespace DinoDiner.Menu.Drinks
         public void AddLemon()
         {
             this.Lemon = true;
-            Ingredients.Add("Lemon");
+            ingredients.Add("Lemon");
             NotifyOfPropertyChange("Special");
         }
 

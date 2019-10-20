@@ -104,6 +104,7 @@ namespace MenuTest.Sides
             Assert.Equal($"{size} Meteor Mac and Cheese", mmc.Description);
         }
 
+        /*
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
@@ -128,6 +129,6 @@ namespace MenuTest.Sides
             {
                 m.Size = size;
             });
-        }
+        }*/
     }
 }

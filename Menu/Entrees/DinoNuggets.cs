@@ -61,9 +61,9 @@ namespace DinoDiner.Menu.Entrees
             this.numOfNugs += 1;
             this.Calories += 59;
             this.extraNugs++;
-            NotifyOfPropertyChanged("Special");
-            NotifyOfPropertyChanged("Price");
-            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Price");
+            NotifyOfPropertyChange("Description");
         }
 
         public override string ToString()

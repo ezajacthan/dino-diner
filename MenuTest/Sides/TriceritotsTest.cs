@@ -104,6 +104,7 @@ namespace MenuTest.Sides
             Assert.Equal($"{size} Triceritots", tt.Description);
         }
 
+        /*
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
@@ -128,6 +129,6 @@ namespace MenuTest.Sides
             {
                 t.Size = size;
             });
-        }
+        }*/
     }
 }

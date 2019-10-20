@@ -161,10 +161,10 @@ namespace MenuTest.Drinks
         public void SpecialShouldGveRoomForCream()
         {
             JurrasicJava j = new JurrasicJava();
-            j.RoomForCream();
+            j.LeaveRoomForCream();
             Assert.Collection<string>(j.Special, item =>
             {
-                Assert.Equal("Room for Cream", item);
+                Assert.Equal("Room For Cream", item);
             });
         }
 
@@ -194,15 +194,15 @@ namespace MenuTest.Drinks
         public void SpecialShouldGveRoomForCreamAndAddIce()
         {
             JurrasicJava j = new JurrasicJava();
-            j.RoomForCream();
+            j.LeaveRoomForCream();
             j.AddIce();
             Assert.Collection<string>(j.Special, item =>
             {
-                Assert.Equal("Room for Cream", item);
+                Assert.Equal("Room For Cream", item);
             },
             item =>
             {
-                Assert.Equal("Add Ice");
+                Assert.Equal("Add Ice", item);
             });
         }
 
@@ -210,15 +210,15 @@ namespace MenuTest.Drinks
         public void SpecialShouldGveRoomForCreamAndMakeDecaf()
         {
             JurrasicJava j = new JurrasicJava();
-            j.RoomForCream();
+            j.LeaveRoomForCream();
             j.Decaf();
             Assert.Collection<string>(j.Special, item =>
             {
-                Assert.Equal("Room for Cream", item);
+                Assert.Equal("Room For Cream", item);
             },
             item =>
             {
-                Assert.Equal("Decaf");
+                Assert.Equal("Decaf", item);
             });
         }
 
@@ -226,18 +226,20 @@ namespace MenuTest.Drinks
         public void SpecialShouldGveRoomForCreamAndAddIceAndMakeDecaf()
         {
             JurrasicJava j = new JurrasicJava();
-            j.RoomForCream();
+            j.LeaveRoomForCream();
+            j.AddIce();
+            j.Decaf();
             Assert.Collection<string>(j.Special, item =>
             {
-                Assert.Equal("Room for Cream", item);
+                Assert.Equal("Room For Cream", item);
             },
             item =>
             {
-                Assert.Equal("Add Ice");
+                Assert.Equal("Add Ice", item);
             },
             item =>
             {
-                Assert.Equal("Decaf");
+                Assert.Equal("Decaf", item);
             });
         }
 
@@ -263,7 +265,7 @@ namespace MenuTest.Drinks
             JurrasicJava j = new JurrasicJava();
             Assert.PropertyChanged(j, "Special", () =>
             {
-                j.RoomForCream();
+                j.LeaveRoomForCream();
             });
         }
 

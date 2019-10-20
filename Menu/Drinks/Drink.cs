@@ -58,7 +58,7 @@ namespace DinoDiner.Menu.Drinks
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Helper function for event handler
-        private void NotifyOfPropertyChange(string propertyName)
+        protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

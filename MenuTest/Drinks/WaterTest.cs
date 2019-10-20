@@ -189,17 +189,18 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
-        public void SpecialShouldAddLemon()
+        public void SpecialShouldAddLemonAndHoldIce()
         {
             Water w = new Water();
             w.AddLemon();
+            w.HoldIce();
             Assert.Collection<string>(w.Special, item =>
             {
                 Assert.Equal("Add Lemon", item);
             },
             item =>
             {
-                Assert.Equal("Hold Ice");
+                Assert.Equal("Hold Ice", item);
             });
         }
 

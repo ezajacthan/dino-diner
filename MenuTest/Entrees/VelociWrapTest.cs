@@ -177,7 +177,7 @@ namespace MenuTest.Entrees
         [Fact]
         public void HoldCheeseShouldNotifyOfSpecialPropertyChange()
         {
-            Velociwrap v = new Velociwrap();
+            VelociWrap v = new VelociWrap();
             Assert.PropertyChanged(v, "Special", () =>
             {
                 v.HoldCheese();
@@ -187,7 +187,7 @@ namespace MenuTest.Entrees
         [Fact]
         public void HoldDressingShouldNotifyOfSpecialPropertyChange()
         {
-            Velociwrap v = new Velociwrap();
+            VelociWrap v = new VelociWrap();
             Assert.PropertyChanged(v, "Special", () =>
             {
                 v.HoldDressing();
@@ -197,7 +197,7 @@ namespace MenuTest.Entrees
         [Fact]
         public void HoldLettuceShouldNotifyOfSpecialPropertyChange()
         {
-            Velociwrap v = new Velociwrap();
+            VelociWrap v = new VelociWrap();
             Assert.PropertyChanged(v, "Special", () =>
             {
                 v.HoldLettuce();

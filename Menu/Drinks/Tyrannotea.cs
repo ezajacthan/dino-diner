@@ -12,6 +12,7 @@ namespace DinoDiner.Menu.Drinks
         protected Size size;
         public bool hasLemon = false;
         public bool isSweet = false;
+        private List<string> ingredients = new List<string>();
 
         /// <summary>
         /// No argument constructor
@@ -20,6 +21,8 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Price = .99;
             this.Calories = 8;
+            ingredients.Add("Water");
+            ingredients.Add("Tea");
         }
 
         /// <summary>
@@ -44,8 +47,8 @@ namespace DinoDiner.Menu.Drinks
                         this.size = Size.Small;
                         break;
                 }
-                NotifyOfPropertyChanged("Description");
-                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Price");
             }
             get
             {
@@ -68,7 +71,12 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                return new List<string>() { "Water", "Tea" };
+                List<string> returnList = new List<string>();
+                foreach(string s in ingredients)
+                {
+                    returnList.Add(s);
+                }
+                return returnList;
             }
         }
 
@@ -78,8 +86,8 @@ namespace DinoDiner.Menu.Drinks
         public void AddLemon()
         {
             this.hasLemon = true;
-            Ingredients.Add("Lemon");
-            NotifyOfPropertyChanged("Special");
+            ingredients.Add("Lemon");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -88,9 +96,9 @@ namespace DinoDiner.Menu.Drinks
         public void AddSugar()
         {
             this.isSweet = true;
-            Ingredients.Add("Cane Sugar");
+            ingredients.Add("Cane Sugar");
             this.Calories = 2 * this.Calories;
-            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -99,9 +107,9 @@ namespace DinoDiner.Menu.Drinks
         public void RemoveSugar()
         {
             this.isSweet = false;
-            Ingredients.Remove("Cane Sugar");
+            ingredients.Remove("Cane Sugar");
             this.Calories = ((this.Calories) / 2);
-            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>

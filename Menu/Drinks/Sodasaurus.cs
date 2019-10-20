@@ -40,7 +40,7 @@ namespace DinoDiner.Menu.Drinks
             set
             {
                 this.flavor = value;
-                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChange("Description");
             }
         }
 

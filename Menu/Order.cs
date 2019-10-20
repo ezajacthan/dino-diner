@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace DinoDiner.Menu
 {
     public class Order
     {
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        private ObservableCollection<IOrderItem> items;
 
-        public double SubtotalCost
+        //public ObservableCollection<IOrderItem> Items { get => items; set => items = value; }
+
+        /*public double SubtotalCost
         {
             get
             {
                 double subtotal = 0.0;
-                foreach (IOrderItem item in this)
+                Order order = this;
+                foreach (IOrderItem item in order)
                 {
                     subtotal += item.Price;
                 }
@@ -36,5 +40,6 @@ namespace DinoDiner.Menu
         {
             get { return this.SubtotalCost + SalestTaxCost; }
         }
+    */
     }
 }

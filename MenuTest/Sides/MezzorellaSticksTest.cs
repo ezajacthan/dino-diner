@@ -104,6 +104,7 @@ namespace MenuTest.Sides
             Assert.Equal($"{size} Mezzorella Sticks", ms.Description);
         }
 
+        /*
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
@@ -128,6 +129,7 @@ namespace MenuTest.Sides
             {
                 m.Size = size;
             });
-        }
+        }*/
+
     }
 }

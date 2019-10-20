@@ -58,7 +58,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldLettuce()
         {
             this.lettuce = false;
-            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldDressing()
         {
             this.dressing = false;
-            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             this.cheese = false;
-            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChange("Special");
         }
 
         public override string ToString()

@@ -257,8 +257,8 @@ namespace MenuTest.Drinks
         public void SpecialShouldAddLemon()
         {
             Tyrannotea t = new Tyrannotea();
-            s.addLemon();
-            Assert.Collection<string>(j.Special, item =>
+            t.AddLemon();
+            Assert.Collection<string>(t.Special, item =>
             {
                 Assert.Equal("Add Lemon", item);
             });
@@ -268,25 +268,26 @@ namespace MenuTest.Drinks
         public void SpecialShouldMakeSweet()
         {
             Tyrannotea t = new Tyrannotea();
-            s.AddSugar();
-            Assert.Collection<string>(j.Special, item =>
+            t.AddSugar();
+            Assert.Collection<string>(t.Special, item =>
             {
                 Assert.Equal("Sweet", item);
             });
         }
 
         [Fact]
-        public void SpecialShouldAddLemon()
+        public void SpecialShouldAddLemonAndSweet()
         {
             Tyrannotea t = new Tyrannotea();
-            s.addLemon();
-            Assert.Collection<string>(j.Special, item =>
+            t.AddLemon();
+            t.AddSugar();
+            Assert.Collection<string>(t.Special, item =>
             {
                 Assert.Equal("Add Lemon", item);
             },
             item =>
             {
-                Assert.Equal("Sweet");
+                Assert.Equal("Sweet", item);
             });
         }
 
@@ -333,7 +334,7 @@ namespace MenuTest.Drinks
             Assert.PropertyChanged(t, "Special", () =>
             {
                 t.AddSugar();
-                t.RemovesSUgar();
+                t.RemoveSugar();
             });
         }
 

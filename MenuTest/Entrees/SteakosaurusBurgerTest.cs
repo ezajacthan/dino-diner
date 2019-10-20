@@ -174,11 +174,11 @@ namespace MenuTest.Entrees
             s.HoldMustard();
             Assert.Collection<string>(s.Special, item =>
             {
-                Assert.Equal("Hold Bun", item);
+                Assert.Equal("Hold Mustard", item);
             },
             item =>
             {
-                Assert.Equal("Hold Mustard", item);
+                Assert.Equal("Hold Bun", item);
             });
         }
 
@@ -231,7 +231,7 @@ namespace MenuTest.Entrees
             SteakosaurusBurger b = new SteakosaurusBurger();
             Assert.PropertyChanged(b, "Special", () =>
             {
-                b.MoldMustard();
+                b.HoldMustard();
             });
         }
 

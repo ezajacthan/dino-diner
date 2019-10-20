@@ -202,7 +202,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus s = new Sodasaurus();
             s.HoldIce();
-            Assert.Collection<string>(j.Special, item =>
+            Assert.Collection<string>(s.Special, item =>
             {
                 Assert.Equal("Hold Ice", item);
             });
