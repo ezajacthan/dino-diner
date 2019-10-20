@@ -85,5 +85,23 @@ namespace MenuTest.Sides
             tt.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, tt.Size);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialByDefault()
+        {
+            Triceritots t = new Triceritots();
+            Assert.Empty(t.Special);
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void DescriptionShouldGiveNameForSize(Size size)
+        {
+            Triceritots tt = new Triceritots();
+            tt.Size = size;
+            Assert.Equal($"{size} Triceritots", tt.Description);
+        }
     }
 }
