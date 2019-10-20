@@ -25,5 +25,29 @@ namespace MenuTest
             Order o = new Order();
 
         }
+
+        [Fact]
+        public void SalesTaxRateShouldBeProtectedSet()
+        {
+            Order o = new Order();
+            o.SalesTaxRate = 0.07;
+            Assert.Equal(0.07, o.SalesTaxRate);
+        }
+
+        [Fact]
+        public void SalesTaxCostShouldCalculateProperly()
+        {
+            Order o = new Order();
+            o.Items = new ObservableCollection<IOrderItem>(new Brontowurst(), new Sodasaurus());
+            Assert.Equal(.4802, o.SalesTaxCost);
+        }
+
+        [Fact]
+        public void TotalCostShouldCalculateProperly()
+        {
+            Order o = new Order();
+            o.Items = new ObservableCollection<IOrderItem>(new Brontowurst(), new Sodasaurus());
+            Assert.Equal(7.34, o.TotalCost);
+        }
     }
 }
