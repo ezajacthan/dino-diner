@@ -30,7 +30,7 @@ namespace MenuTest.Drinks
             Assert.False(j.Ice);
         }
 
-        
+
         [Fact]
         public void ShouldHaveCorrectDefaultCream()
         {
@@ -122,7 +122,7 @@ namespace MenuTest.Drinks
         }
 
         //Checking that holds and adds work
-        
+
         [Fact]
         public void RoomForCreamShouldAddRoomForCream()
         {
@@ -257,5 +257,60 @@ namespace MenuTest.Drinks
             else Assert.Equal($"{size} Jurassic Java", java.Description);
         }
 
+        [Fact]
+        public void RoomForCreamShouldNotifyOfSpecialPropertyChange()
+        {
+            JurrasicJava j = new JurrasicJava();
+            Assert.PropertyChanged(j, "Special", () =>
+            {
+                j.RoomForCream();
+            });
+        }
+
+        [Fact]
+        public void AddIceShouldNotifyOfSpecialPropertyChange()
+        {
+            JurrasicJava j = new JurrasicJava();
+            Assert.PropertyChanged(j, "Special", () =>
+            {
+                j.AddIce();
+            });
+        }
+
+        [Fact]
+        public void DecafShouldNotifyOfSpecialPropertyChange()
+        {
+            JurrasicJava j = new JurrasicJava();
+            Assert.PropertyChanged(j, "Special", () =>
+            {
+                j.Decaf();
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SettingSizeShouldNotifyOfDescriptionPropertyChange(Size size)
+        {
+            JurrasicJava j = new JurrasicJava();
+            Assert.PropertyChanged(j, "Description", () =>
+            {
+                j.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SettingSizeShouldNotifyOfPricePropertyChange(Size size)
+        {
+            JurrasicJava j = new JurrasicJava();
+            Assert.PropertyChanged(j, "Price", () =>
+            {
+                j.Size = size;
+            });
+        }
     }
 }

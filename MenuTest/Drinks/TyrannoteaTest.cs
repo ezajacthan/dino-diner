@@ -22,7 +22,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultCalories()
         {
             Tyrannotea s = new Tyrannotea();
-            Assert.Equal<uint> (8, s.Calories);
+            Assert.Equal<uint>(8, s.Calories);
         }
 
         [Fact]
@@ -304,6 +304,63 @@ namespace MenuTest.Drinks
             tea.isSweet = sweet;
             if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.Description);
             else Assert.Equal($"{size} Tyrannotea", tea.Description);
+        }
+
+        [Fact]
+        public void AddLemonShouldNotifyOfSpecialPropertyChange()
+        {
+            Tyrannotea t = new Tyrannotea();
+            Assert.PropertyChanged(t, "Special", () =>
+            {
+                t.AddLemon();
+            });
+        }
+
+        [Fact]
+        public void AddSugarShouldNotifyOfSpecialPropertyChange()
+        {
+            Tyrannotea t = new Tyrannotea();
+            Assert.PropertyChanged(t, "Special", () =>
+            {
+                t.AddSugar();
+            });
+        }
+
+        [Fact]
+        public void RemoveSugarShouldNotifyOfSpecialPropertyChange()
+        {
+            Tyrannotea t = new Tyrannotea();
+            Assert.PropertyChanged(t, "Special", () =>
+            {
+                t.AddSugar();
+                t.RemovesSUgar();
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SettingToSmallShouldNotifyOfDescriptionPropertyChange(Size size)
+        {
+            Tyrannotea t = new Tyrannotea();
+            Assert.PropertyChanged(t, "Description", () =>
+            {
+                t.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SettingToSmallShouldNotifyOfPricePropertyChange(Size size)
+        {
+            Tyrannotea t = new Tyrannotea();
+            Assert.PropertyChanged(t, "Price", () =>
+            {
+                t.Size = size;
+            });
         }
     }
 }

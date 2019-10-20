@@ -213,5 +213,15 @@ namespace MenuTest.Drinks
             water.Size = size;
             Assert.Equal($"{size} Water", water.Description);
         }
+
+        [Fact]
+        public void AddLemonShouldNotifyOfSpecialPropertyChange()
+        {
+            Water w = new Water();
+            Assert.PropertyChanged(w, "Special", () =>
+            {
+                w.AddLemon();
+            });
+        }
     }
 }
