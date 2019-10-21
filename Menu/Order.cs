@@ -7,22 +7,20 @@ namespace DinoDiner.Menu
 {
     public class Order
     {
-        private ObservableCollection<IOrderItem> items;
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
-        //public ObservableCollection<IOrderItem> Items { get => items; set => items = value; }
-
-        /*public double SubtotalCost
+        public double SubtotalCost
         {
             get
             {
-                double subtotal = 0.0;
+                double subtotal = 5.0;
                 Order order = this;
-                foreach (IOrderItem item in order)
+                /*foreach (IOrderItem item in order)
                 {
                     subtotal += item.Price;
                 }
                 if (subtotal < 0) return 0;
-                else return subtotal;
+                else */return subtotal;
             }
         }
 
@@ -40,6 +38,5 @@ namespace DinoDiner.Menu
         {
             get { return this.SubtotalCost + SalestTaxCost; }
         }
-    */
     }
 }
