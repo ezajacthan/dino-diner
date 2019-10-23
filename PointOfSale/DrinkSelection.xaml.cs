@@ -66,7 +66,7 @@ namespace PointOfSale
         
         private void SpecialtyButtonClicked(object sender, RoutedEventArgs args)
         {
-            if(SpecialtyButton.Content == "Flavor")
+            if((string)SpecialtyButton.Content == "Flavor")
             {
                 NavigationService.Navigate(new FlavorSelection());
             }

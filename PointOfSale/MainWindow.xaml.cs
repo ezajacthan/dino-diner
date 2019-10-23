@@ -27,13 +27,8 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            Tyrannotea tea = new Tyrannotea();
-            tea.AddLemon();
-            tea.AddSugar();
-            order.Items.Add(tea);
-
+            Order order = DataContext as Order;
+            OrderList.NavigationService = OrderInterface.NavigationService;
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)

@@ -22,22 +22,67 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        //backing property
+        public Side Side { get; set; }
+
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            this.Side = side;
+        }
+
         public void AddFryceritops(object sender, RoutedEventArgs args)
         {
-            Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            AddFryButton.IsEnabled = false;
-            AddMacButton.IsEnabled = false;
-            AddMezzButton.IsEnabled = false;
-            AddTotsButton.IsEnabled = false;
-            SmallButton.IsEnabled = true;
-            MedButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            SelectSide(new Fryceritops());
+        }
+
+        public void AddMacNCheese(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new MeteorMacAndCheese());
+        }
+
+        public void AddMezzSticks(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new MezzorellaSticks());
+        }
+
+        public void AddTots(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new Triceritots());
+        }
+
+        private void SelectSide(Side side)
+        {
+            if (DataContext is Order order)
+            {
+                order.Items.Add(side);
+                this.Side = side;
+            }
+        }
+
+        public void SmallClicked(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
+        public void MediumClicked(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+
+        public void LargeClicked(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (this.Side != null) this.Side.Size = size;
         }
     }
 }

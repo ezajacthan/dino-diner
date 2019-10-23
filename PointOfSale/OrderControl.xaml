@@ -17,25 +17,42 @@
 
         <TextBox Text="Order" Grid.Row="0"/>
         <ListBox Grid.Row="1"
-                 ItemsSource ="{Binding Path=Items}">
+                 ItemsSource ="{Binding Path=Items}"
+                 SelectionChanged="OnSelectionChanged"
+                 Name="OrderItems">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
-                    </StackPanel>
+                    <Grid MinWidth="180">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <ListBox ItemsSource="{Binding Path=Special}"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Name="RemoveButton">X</Button>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal" >
-                <TextBox Text="Price: "/>
-                <TextBox Text="$____"/>
+                <TextBox Text="Price: " Width="40"/>
+                <TextBox Text="$" Width="160"/>
             </StackPanel>
 
         </Border>
 
-        <TextBox Text="Buttons Go Here" Grid.Row="3"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="CancelButton" Margin="2">Cancel</Button>
+            <Button Grid.Column="2" Name="PayButton" Margin="2">Pay</Button>
+        </Grid>
     </Grid>
 
 </UserControl>
