@@ -11,13 +11,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
         <TextBox Text="Order" Grid.Row="0"/>
         <ListBox Grid.Row="1"
-                 ItemsSource ="{Binding Path=Items}"
+                 ItemsSource ="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
                  SelectionChanged="OnSelectionChanged"
                  Name="OrderItems">
             <ListBox.ItemTemplate>
@@ -27,27 +27,43 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
+                        <StackPanel Grid.Column="0" Width="160">
                             <TextBlock Text="{Binding Path=Description}"/>
-                            <ListBox ItemsSource="{Binding Path=Special}"/>
+                            <ListBox Name ="OrderItems" ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                         </StackPanel>
-                        <Button Grid.Column="1" Name="RemoveButton">X</Button>
+                        <Button Grid.Column="1" Name="RemoveButton" Click="RemoveButtonClicked" Width="15" Background="Red" Foreground="White">X</Button>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Border Grid.Row="2">
-            <StackPanel Orientation="Horizontal" >
-                <TextBox Text="Price: " Width="40"/>
-                <TextBox Text="$" Width="160"/>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Subtotal: $" Width="63"/>
+                    <TextBlock Text="{Binding Path=SubtotalCost}" Width="125" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBlock Text="Sales Tax: $" Width="65"/>
+                    <TextBlock Text= "{Binding Path=SalesTaxCost}" Width="125"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="2">
+                    <TextBlock Text="Total Price: $" Width="72"/>
+                    <TextBlock Text= "{Binding Path=TotalCost}" Width="125"/>
+                </StackPanel>
+            </Grid>
 
         </Border>
 
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="15"/>
             </Grid.ColumnDefinitions>
 
             <Button Name="CancelButton" Margin="2">Cancel</Button>

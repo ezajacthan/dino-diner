@@ -8,7 +8,7 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// Represents a generic side on the menu
     /// </summary>
-    public abstract class Side : IMenuItem, IOrderItem
+    public abstract class Side : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
