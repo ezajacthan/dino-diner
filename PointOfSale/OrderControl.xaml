@@ -63,7 +63,7 @@
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="15"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Button Name="CancelButton" Margin="2">Cancel</Button>

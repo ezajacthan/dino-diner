@@ -11,8 +11,7 @@
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="150"></Setter>
-                <Setter Property="MinHeight" Value="100"></Setter>
+                
                 <Setter Property="Margin" Value="15"></Setter>
             </Style>
         </Grid.Resources>
@@ -27,27 +26,28 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button FontWeight="UltraBold">
+        <Button FontWeight="UltraBold" Name="CherryButton" Click="CherryClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Cherry</TextBlock>
         </Button>
-        <Button Grid.Column="1" FontWeight="UltraBold">
+        <Button Grid.Column="1" FontWeight="UltraBold" Name="ChocolateButton" Click="ChocolateClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Chocolate</TextBlock>
         </Button>
-        <Button Grid.Column="2" FontWeight="UltraBold">
+        <Button Grid.Column="2" FontWeight="UltraBold" Name="ColaButton" Click="ColaClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Cola</TextBlock>
         </Button>
-        <Button Grid.Row="1" FontWeight="UltraBold">
+        <Button Grid.Row="1" FontWeight="UltraBold" Name="LimeButton" Click="LimeClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Lime</TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="1" FontWeight="UltraBold">
+        <Button Grid.Row="1" Grid.Column="1" FontWeight="UltraBold" Name="OrangeButton" Click="OrangeClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Orange</TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="2" FontWeight="UltraBold">
+        <Button Grid.Row="1" Grid.Column="2" FontWeight="UltraBold" Name="RootButton" Click="RootClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Root Beer</TextBlock>
         </Button>
-        <Button Grid.Row="2" FontWeight="UltraBold">
+        <Button Grid.Row="2" FontWeight="UltraBold" Name="VanillaButton" Click="VanillaClicked">
             <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" Background="AntiqueWhite">Vanilla</TextBlock>
         </Button>
+        <Button Grid.Row="2" Grid.Column="2" Height="50" Width="100" Name="DoneButton" Click="DoneClicked">Done</Button>
     </Grid>
 
 </Page>

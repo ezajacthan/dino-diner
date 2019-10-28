@@ -83,6 +83,7 @@ namespace DinoDiner.Menu.Drinks
             this.RoomForCream = true;
             Ingredients.Add("Cream");
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>

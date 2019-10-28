@@ -47,36 +47,43 @@ namespace PointOfSale
         private void BrontowurstClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new Brontowurst());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void DinoNugsClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new DinoNuggets());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void PBJClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new PrehistoricPBJ());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void WingsClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new PterodactylWings());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void SteakosaurusClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new SteakosaurusBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void TRexClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new TRexKingBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void VelociwrapClicked(object sender, RoutedEventArgs e)
         {
             SelectEntree(new VelociWrap());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

@@ -30,6 +30,8 @@ namespace DinoDiner.Menu.Drinks
             set
             {
                 size = value;
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Price");
             }
             get
             {

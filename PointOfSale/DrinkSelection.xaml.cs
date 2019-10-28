@@ -39,7 +39,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(d);
+                order.Add(d);
                 this.Drink = d;
             }
         }
@@ -59,7 +59,7 @@ namespace PointOfSale
         {
             IceButton.Content = "Add Ice";
             IceButton.IsEnabled = true;
-            LemonButton.Content = "Room for Cream";
+            LemonButton.Content = "Room For Cream";
             LemonButton.IsEnabled = true;
             SpecialtyButton.Content = "Decaf";
             SpecialtyButton.IsEnabled = true;
@@ -71,7 +71,7 @@ namespace PointOfSale
             IceButton.Content = "";
             IceButton.IsEnabled = false;
             LemonButton.IsEnabled = true;
-            LemonButton.Content = "Lemon";
+            LemonButton.Content = "Add Lemon";
             SpecialtyButton.Content = "Sweet";
             SpecialtyButton.IsEnabled = true;
             SelectDrink(new Tyrannotea());
@@ -92,7 +92,21 @@ namespace PointOfSale
         {
             if((string)SpecialtyButton.Content == "Flavor")
             {
-                NavigationService.Navigate(new FlavorSelection());
+                NavigationService.Navigate(new FlavorSelection(this.Drink));
+            }
+            else if((string)SpecialtyButton.Content == "Sweet")
+            {
+                if(this.Drink is Tyrannotea tea)
+                {
+                    if (this.Drink != null) tea.AddSugar();
+                } 
+            }
+            else if ((string)SpecialtyButton.Content == "Decaf")
+            {
+                if (this.Drink is JurrasicJava java)
+                {
+                    if (this.Drink != null) java.Decaf();
+                }
             }
         }
 
@@ -112,6 +126,55 @@ namespace PointOfSale
         private void LargeClicked(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
+        }
+
+        private void DoneClicked(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void LemonClicked(object sender, RoutedEventArgs args)
+        {
+            if ((string)LemonButton.Content == "Add Lemon")
+            {
+                if (this.Drink is Tyrannotea tea)
+                {
+                    if (this.Drink != null) tea.AddLemon();
+                }
+                if (this.Drink is Water water)
+                {
+                    if (this.Drink != null) water.AddLemon();
+                }
+            }
+            else if ((string)LemonButton.Content == "Room For Cream")
+            {
+                if (this.Drink is JurrasicJava java)
+                {
+                    if (this.Drink != null) java.LeaveRoomForCream();
+                }
+            }
+        }
+
+        private void IceClicked(object sender, RoutedEventArgs args)
+        {
+            if ((string)IceButton.Content == "Hold Ice")
+            {
+                if (this.Drink is Sodasaurus soda)
+                {
+                    if (this.Drink != null) soda.HoldIce();
+                }
+                if (this.Drink is Water water)
+                {
+                    if (this.Drink != null) water.HoldIce();
+                }
+            }
+            else if ((string)IceButton.Content == "Add Ice")
+            {
+                if (this.Drink is JurrasicJava java)
+                {
+                    if (this.Drink != null) java.AddIce();
+                }
+            }
         }
     }
 }
