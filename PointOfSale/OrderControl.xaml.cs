@@ -45,7 +45,7 @@ namespace PointOfSale
             {
                 if(sender is FrameworkElement element)
                 {
-                    if(element.DataContext is IOrderItem item) order.Items.Remove(item);
+                    if(element.DataContext is IOrderItem item) order.Remove(item);
                 }
             }
         }

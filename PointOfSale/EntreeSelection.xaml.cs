@@ -39,7 +39,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(e);
+                order.Add(e);
                 this.Entree = e;
             }
         }
@@ -58,8 +58,9 @@ namespace PointOfSale
 
         private void PBJClicked(object sender, RoutedEventArgs e)
         {
-            SelectEntree(new PrehistoricPBJ());
-            NavigationService.Navigate(new MenuCategorySelection());
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            SelectEntree(pbj);
+            NavigationService.Navigate(new PrehistoricPBJCustomizer(pbj));
         }
 
         private void WingsClicked(object sender, RoutedEventArgs e)
