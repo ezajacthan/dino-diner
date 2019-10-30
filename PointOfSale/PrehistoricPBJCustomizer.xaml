@@ -13,6 +13,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -21,6 +22,7 @@
         </Grid.ColumnDefinitions>
         <Button Grid.Row="1" Click="HoldPeanutButterClicked">Hold Peanut Butter</Button>
         <Button Grid.Row="1" Grid.Column="2" Click="HoldJellyClicked">Hold Jelly</Button>
-        <Button Grid.Row="2" Grid.Column="1" Height="40" Width="100" Click="DoneClicked">Done</Button>
+        <Button Grid.Row="3" Grid.Column="1" Height="40" Width="100" Click="DoneClicked">Done</Button>
+        <Button Grid.Row="3" Height="40" Width="100" Click="BackClicked">Back</Button>
     </Grid>
 </Page>

@@ -52,6 +52,7 @@ namespace PointOfSale
             LemonButton.Content = "Add Lemon";
             SpecialtyButton.Content = "";
             SpecialtyButton.IsEnabled = false;
+            DoneButton.IsEnabled = true;
             SelectDrink(new Water());
         }
 
@@ -62,6 +63,7 @@ namespace PointOfSale
             LemonButton.Content = "Room For Cream";
             LemonButton.IsEnabled = true;
             SpecialtyButton.Content = "Decaf";
+            DoneButton.IsEnabled = true;
             SpecialtyButton.IsEnabled = true;
             SelectDrink(new JurrasicJava());
         }
@@ -74,6 +76,7 @@ namespace PointOfSale
             LemonButton.Content = "Add Lemon";
             SpecialtyButton.Content = "Sweet";
             SpecialtyButton.IsEnabled = true;
+            DoneButton.IsEnabled = true;
             SelectDrink(new Tyrannotea());
         }
 
@@ -85,6 +88,7 @@ namespace PointOfSale
             LemonButton.Content = "";
             SpecialtyButton.Content = "Flavor";
             SpecialtyButton.IsEnabled = true;
+            DoneButton.IsEnabled = true;
             SelectDrink(new Sodasaurus());
         }
         

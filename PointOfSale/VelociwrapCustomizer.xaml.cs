@@ -12,30 +12,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu.Entrees;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for PrehistoricPBJCustomizer.xaml
+    /// Interaction logic for VelociwrapCustomizer.xaml
     /// </summary>
-    public partial class PrehistoricPBJCustomizer : Page
+    public partial class VelociwrapCustomizer : Page
     {
-        private PrehistoricPBJ pbj;
-        public PrehistoricPBJCustomizer(PrehistoricPBJ pbj)
+        private DinoDiner.Menu.Entrees.VelociWrap wrap;
+        public VelociwrapCustomizer(DinoDiner.Menu.Entrees.VelociWrap v)
         {
-            this.pbj = pbj;
+            this.wrap = v;
             InitializeComponent();
         }
 
-        private void HoldPeanutButterClicked(object sender, RoutedEventArgs args)
+        private void HoldCheeseClicked(object sender, RoutedEventArgs args)
         {
-            pbj.HoldPeanutButter();
+            wrap.HoldCheese();
         }
-        private void HoldJellyClicked(object sender, RoutedEventArgs args)
+
+        private void HoldLettuceClicked(object sender, RoutedEventArgs args)
         {
-            pbj.HoldJelly();
+            wrap.HoldLettuce();
         }
+
+        private void HoldDressingClicked(object sender, RoutedEventArgs args)
+        {
+            wrap.HoldDressing();
+        }
+
         private void DoneClicked(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new MenuCategorySelection());

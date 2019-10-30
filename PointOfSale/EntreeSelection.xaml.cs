@@ -73,20 +73,23 @@ namespace PointOfSale
 
         private void SteakosaurusClicked(object sender, RoutedEventArgs e)
         {
-            SelectEntree(new SteakosaurusBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            SteakosaurusBurger steak = new SteakosaurusBurger();
+            SelectEntree(steak);
+            NavigationService.Navigate(new SteakosaurusCustomizer(steak));
         }
 
         private void TRexClicked(object sender, RoutedEventArgs e)
         {
-            SelectEntree(new TRexKingBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            TRexKingBurger rex = new TRexKingBurger();
+            SelectEntree(rex);
+            NavigationService.Navigate(new TRexCustomizer(rex));
         }
 
         private void VelociwrapClicked(object sender, RoutedEventArgs e)
         {
-            SelectEntree(new VelociWrap());
-            NavigationService.Navigate(new MenuCategorySelection());
+            VelociWrap wrap = new VelociWrap();
+            SelectEntree(wrap);
+            NavigationService.Navigate(new VelociwrapCustomizer(wrap));
         }
     }
 }

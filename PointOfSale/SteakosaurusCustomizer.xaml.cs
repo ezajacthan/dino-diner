@@ -12,30 +12,41 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu.Entrees;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for PrehistoricPBJCustomizer.xaml
+    /// Interaction logic for SteakosaurusCustomizer.xaml
     /// </summary>
-    public partial class PrehistoricPBJCustomizer : Page
+    public partial class SteakosaurusCustomizer : Page
     {
-        private PrehistoricPBJ pbj;
-        public PrehistoricPBJCustomizer(PrehistoricPBJ pbj)
+        private DinoDiner.Menu.Entrees.SteakosaurusBurger steak;
+        public SteakosaurusCustomizer(DinoDiner.Menu.Entrees.SteakosaurusBurger b)
         {
-            this.pbj = pbj;
+            this.steak = b;
             InitializeComponent();
         }
 
-        private void HoldPeanutButterClicked(object sender, RoutedEventArgs args)
+        private void HoldBunClicked(object sender, RoutedEventArgs args)
         {
-            pbj.HoldPeanutButter();
+            steak.HoldBun();
         }
-        private void HoldJellyClicked(object sender, RoutedEventArgs args)
+
+        private void HoldKetchupClicked(object sender, RoutedEventArgs args)
         {
-            pbj.HoldJelly();
+            steak.HoldKetchup();
         }
+
+        private void HoldMustardClicked(object sender, RoutedEventArgs args)
+        {
+            steak.HoldMustard();
+        }
+
+        private void HoldPickleClicked(object sender, RoutedEventArgs args)
+        {
+            steak.HoldPickle();
+        }
+
         private void DoneClicked(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new MenuCategorySelection());

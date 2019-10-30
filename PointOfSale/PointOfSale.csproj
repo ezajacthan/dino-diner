@@ -72,6 +72,15 @@
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SteakosaurusCustomizer.xaml.cs">
+      <DependentUpon>SteakosaurusCustomizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TRexCustomizer.xaml.cs">
+      <DependentUpon>TRexCustomizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VelociwrapCustomizer.xaml.cs">
+      <DependentUpon>VelociwrapCustomizer.xaml</DependentUpon>
+    </Compile>
     <Page Include="BrontowurstCustomizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +146,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SideSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteakosaurusCustomizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TRexCustomizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VelociwrapCustomizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
