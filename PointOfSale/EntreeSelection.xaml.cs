@@ -46,8 +46,9 @@ namespace PointOfSale
 
         private void BrontowurstClicked(object sender, RoutedEventArgs e)
         {
-            SelectEntree(new Brontowurst());
-            NavigationService.Navigate(new MenuCategorySelection());
+            DinoDiner.Menu.Entrees.Brontowurst bronto = new DinoDiner.Menu.Entrees.Brontowurst();
+            SelectEntree(bronto);
+            NavigationService.Navigate(new BrontowurstCustomizer(bronto));
         }
 
         private void DinoNugsClicked(object sender, RoutedEventArgs e)
