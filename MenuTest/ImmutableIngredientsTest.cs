@@ -1,10 +1,6 @@
 ﻿using System;
 using Xunit;
 using DinoDiner.Menu;
-using DinoDiner.Menu.Sides;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Entrees;
-
 namespace MenuTest
 {
     public class ImmutableIngredientsTest

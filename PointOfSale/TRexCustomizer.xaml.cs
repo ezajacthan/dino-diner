@@ -20,8 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class TRexCustomizer : Page
     {
-        private DinoDiner.Menu.Entrees.TRexKingBurger Trex;
-        public TRexCustomizer(DinoDiner.Menu.Entrees.TRexKingBurger t)
+        private DinoDiner.Menu.TRexKingBurger Trex;
+        public TRexCustomizer(DinoDiner.Menu.TRexKingBurger t)
         {
             this.Trex = t;
             InitializeComponent();

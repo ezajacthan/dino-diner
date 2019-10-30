@@ -20,8 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class DinoNuggetsCustomizer : Page
     {
-        private DinoDiner.Menu.Entrees.DinoNuggets nugs;
-        public DinoNuggetsCustomizer(DinoDiner.Menu.Entrees.DinoNuggets d)
+        private DinoDiner.Menu.DinoNuggets nugs;
+        public DinoNuggetsCustomizer(DinoDiner.Menu.DinoNuggets d)
         {
             this.nugs = d;
             InitializeComponent();

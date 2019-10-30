@@ -20,8 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class SteakosaurusCustomizer : Page
     {
-        private DinoDiner.Menu.Entrees.SteakosaurusBurger steak;
-        public SteakosaurusCustomizer(DinoDiner.Menu.Entrees.SteakosaurusBurger b)
+        private DinoDiner.Menu.SteakosaurusBurger steak;
+        public SteakosaurusCustomizer(DinoDiner.Menu.SteakosaurusBurger b)
         {
             this.steak = b;
             InitializeComponent();

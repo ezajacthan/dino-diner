@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
-using DinoDiner.Menu.Sides;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Entrees;
 
 namespace PointOfSale
 {

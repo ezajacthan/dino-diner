@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -25,10 +26,38 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        private void ComboClicked(object sender, RoutedEventArgs args)
+        private void BrontowurstClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new Brontowurst())));
         }
 
+        private void DinoClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new DinoNuggets())));
+        }
+
+        private void PBJClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new PrehistoricPBJ())));
+        }
+
+        private void WingsClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new PterodactylWings())));
+        }
+
+        private void SteakClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new SteakosaurusBurger())));
+        }
+        private void TRexClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new TRexKingBurger())));
+        }
+
+        private void WrapClicked(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CustomizeCombo(new CretaceousCombo(new VelociWrap())));
+        }
     }
 }

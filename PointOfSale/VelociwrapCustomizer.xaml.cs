@@ -20,8 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class VelociwrapCustomizer : Page
     {
-        private DinoDiner.Menu.Entrees.VelociWrap wrap;
-        public VelociwrapCustomizer(DinoDiner.Menu.Entrees.VelociWrap v)
+        private DinoDiner.Menu.VelociWrap wrap;
+        public VelociwrapCustomizer(DinoDiner.Menu.VelociWrap v)
         {
             this.wrap = v;
             InitializeComponent();

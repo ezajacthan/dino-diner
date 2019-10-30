@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu.Entrees;
 
 namespace PointOfSale
 {
@@ -21,8 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class BrontowurstCustomizer : Page
     {
-        private DinoDiner.Menu.Entrees.Brontowurst bronto;
-        public BrontowurstCustomizer(DinoDiner.Menu.Entrees.Brontowurst b)
+        private DinoDiner.Menu.Brontowurst bronto;
+        public BrontowurstCustomizer(DinoDiner.Menu.Brontowurst b)
         {
             this.bronto = b;
             InitializeComponent();
