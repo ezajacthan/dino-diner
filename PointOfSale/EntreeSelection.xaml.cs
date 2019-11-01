@@ -90,5 +90,10 @@ namespace PointOfSale
             SelectEntree(wrap);
             NavigationService.Navigate(new VelociwrapCustomizer(wrap));
         }
+
+        private void DoneClicked(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }

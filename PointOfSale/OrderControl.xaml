@@ -19,6 +19,7 @@
         <ListBox Grid.Row="1"
                  ItemsSource ="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
                  SelectionChanged="OnSelectionChanged"
+                 IsSynchronizedWithCurrentItem="True"
                  Name="OrderItems">
             <ListBox.ItemTemplate>
                 <DataTemplate>

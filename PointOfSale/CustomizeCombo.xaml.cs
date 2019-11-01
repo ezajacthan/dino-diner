@@ -30,12 +30,44 @@ namespace PointOfSale
 
         private void DrinkClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(combo.Drink));
         }
 
         private void SideClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(combo.Side));
+        }
+
+        private void EntreeClicked(object sender, RoutedEventArgs args)
+        {
+           if(combo.Entree is Brontowurst b)
+            {
+                NavigationService.Navigate(new BrontowurstCustomizer(b));
+            }
+            if (combo.Entree is DinoNuggets d)
+            {
+                NavigationService.Navigate(new DinoNuggetsCustomizer(d));
+            }
+            if (combo.Entree is PrehistoricPBJ pbj)
+            {
+                NavigationService.Navigate(new PrehistoricPBJCustomizer(pbj));
+            }
+            if (combo.Entree is SteakosaurusBurger s)
+            {
+                NavigationService.Navigate(new SteakosaurusCustomizer(s));
+            }
+            if (combo.Entree is TRexKingBurger t)
+            {
+                NavigationService.Navigate(new TRexCustomizer(t));
+            }
+            if (combo.Entree is VelociWrap v)
+            {
+                NavigationService.Navigate(new VelociwrapCustomizer(v));
+            }
+            if (combo.Entree is PterodactylWings wings)
+            {
+
+            }
         }
 
         private void SmallClicked(object sender, RoutedEventArgs args)
@@ -52,5 +84,6 @@ namespace PointOfSale
         {
             combo.Size = DinoDiner.Menu.Size.Large;
         }
+
     }
 }

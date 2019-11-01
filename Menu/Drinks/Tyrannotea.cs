@@ -88,6 +88,7 @@ namespace DinoDiner.Menu
             this.hasLemon = true;
             ingredients.Add("Lemon");
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>
@@ -99,6 +100,7 @@ namespace DinoDiner.Menu
             ingredients.Add("Cane Sugar");
             this.Calories = 2 * this.Calories;
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>

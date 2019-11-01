@@ -86,5 +86,10 @@ namespace PointOfSale
         {
             if (this.Side != null) this.Side.Size = size;
         }
+
+        private void DoneClicked(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }

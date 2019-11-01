@@ -367,7 +367,7 @@ namespace MenuTest
         [InlineData(Size.Large, "Description")]
         public void JurassicJavaSizeChangeShouldNotifyProperties(Size size, string property)
         {
-            JurassicJava java = new JurassicJava();
+            JurrasicJava java = new JurrasicJava();
             Assert.PropertyChanged(java, property, () =>
             {
                 java.Size = size;
@@ -377,7 +377,7 @@ namespace MenuTest
         [Fact]
         public void JurrasicJavaAddIceShouldNotifyPropertySpecial()
         {
-            JurassicJava java = new JurassicJava();
+            JurrasicJava java = new JurrasicJava();
             Assert.PropertyChanged(java, "Special", () =>
             {
                 java.AddIce();
@@ -387,7 +387,7 @@ namespace MenuTest
         [Fact]
         public void JurrasicJavaLeaveRoomForCreamShouldNotifyPropertySpecial()
         {
-            JurassicJava java = new JurassicJava();
+            JurrasicJava java = new JurrasicJava();
             Assert.PropertyChanged(java, "Special", () =>
             {
                 java.LeaveRoomForCream();
@@ -469,7 +469,7 @@ namespace MenuTest
             Tyrannotea tea = new Tyrannotea();
             Assert.PropertyChanged(tea, "Description", () =>
             {
-                tea.Sweet = true;
+                tea.AddSugar();
             });
         }
 

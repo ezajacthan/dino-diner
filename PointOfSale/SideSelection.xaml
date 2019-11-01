@@ -69,7 +69,14 @@
         </Grid>
 
         <Grid Grid.Column="2">
-            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Height="40" Grid.Row="3" Margin="10" x:Name="DoneButton"  Click="DoneClicked" Width="100">Done</Button>
+
+
         </Grid>
     </Grid>
 

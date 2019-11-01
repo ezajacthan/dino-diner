@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo: INotifyPropertyChanged
+    public class CretaceousCombo: INotifyPropertyChanged, IOrderItem
     {
         //backing variables
         private Entree entree;
@@ -64,6 +64,9 @@ namespace DinoDiner.Menu
                 size = value;
                 Drink.Size = value;
                 Side.Size = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Special");
             }
         }
 
@@ -85,7 +88,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return $"{Entree} Combo";
+            return $"{Entree} Combo \n {Side} \n {Drink}";
         }
 
         public List<string> Ingredients
