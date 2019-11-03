@@ -66,6 +66,7 @@ namespace DinoDiner.Menu
         {
             this.onions = false;
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
         }
 
         /// <summary>

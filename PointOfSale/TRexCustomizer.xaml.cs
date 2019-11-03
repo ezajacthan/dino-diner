@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,49 +22,111 @@ namespace PointOfSale
     public partial class TRexCustomizer : Page
     {
         private DinoDiner.Menu.TRexKingBurger Trex;
+        private CretaceousCombo combo;
         public TRexCustomizer(DinoDiner.Menu.TRexKingBurger t)
         {
             this.Trex = t;
             InitializeComponent();
         }
+        public TRexCustomizer(DinoDiner.Menu.CretaceousCombo combo)
+        {
+            this.combo = combo;
+            InitializeComponent();
+        }
 
         private void HoldBunClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldBun();
+            Trex?.HoldBun();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldBun();
+                }
+            }
         }
 
         private void HoldLettuceClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldLettuce();
+            Trex?.HoldLettuce();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldLettuce();
+                }
+            }
         }
 
         private void HoldKetchupClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldKetchup();
+            Trex?.HoldKetchup();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldKetchup();
+                }
+            }
         }
 
         private void HoldMayoClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldMayo();
+            Trex?.HoldMayo();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldMayo();
+                }
+            }
         }
         private void HoldMustardClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldMustard();
+            Trex?.HoldMustard();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldMustard();
+                }
+            }
         }
 
         private void HoldOnionClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldOnion();
+            Trex?.HoldOnion();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldOnion();
+                }
+            }
         }
 
         private void HoldPickleClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldPickle();
+            Trex?.HoldPickle();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldPickle();
+                }
+            }
         }
 
         private void HoldTomatoClicked(object sender, RoutedEventArgs args)
         {
-            Trex.HoldTomato();
+            Trex?.HoldTomato();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is TRexKingBurger tb)
+                {
+                    tb.HoldTomato();
+                }
+            }
         }
 
         private void DoneClicked(object sender, RoutedEventArgs args)

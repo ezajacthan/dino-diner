@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,25 +22,53 @@ namespace PointOfSale
     public partial class VelociwrapCustomizer : Page
     {
         private DinoDiner.Menu.VelociWrap wrap;
+        private CretaceousCombo combo;
         public VelociwrapCustomizer(DinoDiner.Menu.VelociWrap v)
         {
             this.wrap = v;
             InitializeComponent();
         }
+        public VelociwrapCustomizer(DinoDiner.Menu.CretaceousCombo combo)
+        {
+            this.combo = combo;
+            InitializeComponent();
+        }
+
 
         private void HoldCheeseClicked(object sender, RoutedEventArgs args)
         {
-            wrap.HoldCheese();
+            wrap?.HoldCheese();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is VelociWrap v)
+                {
+                    v.HoldCheese();
+                }
+            }
         }
 
         private void HoldLettuceClicked(object sender, RoutedEventArgs args)
         {
-            wrap.HoldLettuce();
+            wrap?.HoldLettuce();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is VelociWrap v)
+                {
+                    v.HoldLettuce();
+                }
+            }
         }
 
         private void HoldDressingClicked(object sender, RoutedEventArgs args)
         {
-            wrap.HoldDressing();
+            wrap?.HoldDressing();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is VelociWrap v)
+                {
+                    v.HoldDressing();
+                }
+            }
         }
 
         private void DoneClicked(object sender, RoutedEventArgs args)

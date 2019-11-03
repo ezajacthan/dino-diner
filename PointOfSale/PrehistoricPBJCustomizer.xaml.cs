@@ -21,19 +21,40 @@ namespace PointOfSale
     public partial class PrehistoricPBJCustomizer : Page
     {
         private PrehistoricPBJ pbj;
+        private CretaceousCombo combo;
         public PrehistoricPBJCustomizer(PrehistoricPBJ pbj)
         {
             this.pbj = pbj;
             InitializeComponent();
         }
 
+        public PrehistoricPBJCustomizer(CretaceousCombo combo)
+        {
+            this.combo = combo;
+            InitializeComponent();
+        }
+
         private void HoldPeanutButterClicked(object sender, RoutedEventArgs args)
         {
-            pbj.HoldPeanutButter();
+            pbj?.HoldPeanutButter();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is PrehistoricPBJ pb)
+                {
+                    pb.HoldPeanutButter();
+                }
+            }
         }
         private void HoldJellyClicked(object sender, RoutedEventArgs args)
         {
-            pbj.HoldJelly();
+            pbj?.HoldJelly();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is PrehistoricPBJ pb)
+                {
+                    pb.HoldJelly();
+                }
+            }
         }
         private void DoneClicked(object sender, RoutedEventArgs args)
         {

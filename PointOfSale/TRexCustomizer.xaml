@@ -29,7 +29,7 @@
         <Button Grid.Row="1" Grid.Column="1" Click="HoldOnionClicked">Hold Onion</Button>
         
         <Button Grid.Row="2" Click="HoldPickleClicked">Hold Pickle</Button>
-        <Button Grid.Row="2" Grid.Column="2" Click="HoldBunClicked">Hold Dressing</Button>
+        <Button Grid.Row="2" Grid.Column="2" Click="HoldBunClicked">Hold Bun</Button>
         
         <Button Grid.Row="3" Grid.Column="1" Height="40" Width="100" Click="DoneClicked">Done</Button>
         <Button Grid.Row="3" Height="40" Width="100" Click="BackClicked">Back</Button>

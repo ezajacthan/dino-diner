@@ -51,6 +51,7 @@ namespace DinoDiner.Menu
                 this.side = value;
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Description");
             }
         }
 

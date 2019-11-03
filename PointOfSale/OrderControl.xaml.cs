@@ -44,7 +44,7 @@ namespace PointOfSale
             }
             if (OrderItems.SelectedItem is CretaceousCombo combo)
             {
-                NavigationService?.Navigate(new ComboSelection(combo));
+                NavigationService?.Navigate(new CustomizeCombo(combo));
             }
         }
 

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,30 +22,64 @@ namespace PointOfSale
     public partial class SteakosaurusCustomizer : Page
     {
         private DinoDiner.Menu.SteakosaurusBurger steak;
+        private CretaceousCombo combo;
         public SteakosaurusCustomizer(DinoDiner.Menu.SteakosaurusBurger b)
         {
             this.steak = b;
             InitializeComponent();
         }
+        public SteakosaurusCustomizer(DinoDiner.Menu.CretaceousCombo combo)
+        {
+            this.combo = combo;
+            InitializeComponent();
+        }
 
         private void HoldBunClicked(object sender, RoutedEventArgs args)
         {
-            steak.HoldBun();
+            steak?.HoldBun();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is SteakosaurusBurger sb)
+                {
+                    sb.HoldBun();
+                }
+            }
         }
 
         private void HoldKetchupClicked(object sender, RoutedEventArgs args)
         {
-            steak.HoldKetchup();
+            steak?.HoldKetchup();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is SteakosaurusBurger sb)
+                {
+                    sb.HoldKetchup();
+                }
+            }
         }
 
         private void HoldMustardClicked(object sender, RoutedEventArgs args)
         {
-            steak.HoldMustard();
+            steak?.HoldMustard();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is SteakosaurusBurger sb)
+                {
+                    sb.HoldMustard();
+                }
+            }
         }
 
         private void HoldPickleClicked(object sender, RoutedEventArgs args)
         {
-            steak.HoldPickle();
+            steak?.HoldPickle();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is SteakosaurusBurger sb)
+                {
+                    sb.HoldPickle();
+                }
+            }
         }
 
         private void DoneClicked(object sender, RoutedEventArgs args)

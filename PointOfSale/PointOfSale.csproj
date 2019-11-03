@@ -57,6 +57,15 @@
     <Compile Include="BrontowurstCustomizer.xaml.cs">
       <DependentUpon>BrontowurstCustomizer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComboCustomizeEntree.xaml.cs">
+      <DependentUpon>ComboCustomizeEntree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboDrinkCustomization.xaml.cs">
+      <DependentUpon>ComboDrinkCustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboSideCustomization.xaml.cs">
+      <DependentUpon>ComboSideCustomization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DinoNuggetsCustomizer.xaml.cs">
       <DependentUpon>DinoNuggetsCustomizer.xaml</DependentUpon>
     </Compile>
@@ -85,7 +94,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ComboCustomizeEntree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboDrinkCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboSideCustomization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

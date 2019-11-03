@@ -30,39 +30,39 @@ namespace PointOfSale
 
         private void DrinkClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection(combo.Drink));
+            NavigationService.Navigate(new ComboDrinkCustomization(combo));
         }
 
         private void SideClicked(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(combo.Side));
+            NavigationService.Navigate(new ComboSideCustomization(combo));
         }
 
         private void EntreeClicked(object sender, RoutedEventArgs args)
         {
            if(combo.Entree is Brontowurst b)
             {
-                NavigationService.Navigate(new BrontowurstCustomizer(b));
+                NavigationService.Navigate(new BrontowurstCustomizer(combo));
             }
             if (combo.Entree is DinoNuggets d)
             {
-                NavigationService.Navigate(new DinoNuggetsCustomizer(d));
+                NavigationService.Navigate(new DinoNuggetsCustomizer(combo));
             }
             if (combo.Entree is PrehistoricPBJ pbj)
             {
-                NavigationService.Navigate(new PrehistoricPBJCustomizer(pbj));
+                NavigationService.Navigate(new PrehistoricPBJCustomizer(combo));
             }
             if (combo.Entree is SteakosaurusBurger s)
             {
-                NavigationService.Navigate(new SteakosaurusCustomizer(s));
+                NavigationService.Navigate(new SteakosaurusCustomizer(combo));
             }
             if (combo.Entree is TRexKingBurger t)
             {
-                NavigationService.Navigate(new TRexCustomizer(t));
+                NavigationService.Navigate(new TRexCustomizer(combo));
             }
             if (combo.Entree is VelociWrap v)
             {
-                NavigationService.Navigate(new VelociwrapCustomizer(v));
+                NavigationService.Navigate(new VelociwrapCustomizer(combo));
             }
             if (combo.Entree is PterodactylWings wings)
             {

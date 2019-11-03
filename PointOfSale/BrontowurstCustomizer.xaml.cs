@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,25 +22,53 @@ namespace PointOfSale
     public partial class BrontowurstCustomizer : Page
     {
         private DinoDiner.Menu.Brontowurst bronto;
-        public BrontowurstCustomizer(DinoDiner.Menu.Brontowurst b)
+        private DinoDiner.Menu.CretaceousCombo combo;
+        public BrontowurstCustomizer(Brontowurst b)
         {
             this.bronto = b;
             InitializeComponent();
         }
 
+        public BrontowurstCustomizer(CretaceousCombo c)
+        {
+            this.combo = c;
+            InitializeComponent();
+        }
+
         private void HoldPeppersClicked(object sender, RoutedEventArgs args)
         {
-            bronto.HoldPeppers();
+            bronto?.HoldPeppers();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is Brontowurst wurst)
+                {
+                    wurst.HoldPeppers();
+                }
+            }
         }
 
         private void HoldOnionClicked(object sender, RoutedEventArgs args)
         {
-            bronto.HoldOnion();
+            bronto?.HoldOnion();
+            if(this.combo != null)
+            {
+                if (this.combo.Entree is Brontowurst wurst)
+                {
+                    wurst.HoldOnion();
+                }
+            }
         }
 
         private void HoldBunClicked(object sender, RoutedEventArgs args)
         {
-            bronto.HoldBun();
+            bronto?.HoldBun();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is Brontowurst wurst)
+                {
+                    wurst.HoldBun();
+                }
+            }
         }
 
         private void DoneClicked(object sender, RoutedEventArgs args)
