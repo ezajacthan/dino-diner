@@ -12,3 +12,17 @@ body {
     padding-right: 15px;
 }
 
+.text{
+    padding-left: 50px;
+}
+
+.menucontainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.IngredientFilter{
+    display: flex;
+    flex-direction: column;
+}

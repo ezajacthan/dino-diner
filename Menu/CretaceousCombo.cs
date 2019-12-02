@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo: INotifyPropertyChanged, IOrderItem
+    public class CretaceousCombo: INotifyPropertyChanged, IOrderItem, IMenuItem
     {
         //backing variables
         private Entree entree;
@@ -68,6 +68,14 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Description");
                 NotifyOfPropertyChange("Special");
+            }
+        }
+
+        public uint Calories
+        {
+            get
+            {
+                return this.Entree.Calories + this.Drink.Calories + this.Side.Calories;
             }
         }
 

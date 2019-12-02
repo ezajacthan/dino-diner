@@ -12,11 +12,19 @@ namespace DinoDiner.Menu
         /// <summary>
         /// property to return all menu items
         /// </summary>
-        List<IMenuItem> AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
                 List<IMenuItem> items = new List<IMenuItem>();
+
+                items.Add(new CretaceousCombo(new Brontowurst()));
+                items.Add(new CretaceousCombo(new DinoNuggets()));
+                items.Add(new CretaceousCombo(new PrehistoricPBJ()));
+                items.Add(new CretaceousCombo(new PterodactylWings()));
+                items.Add(new CretaceousCombo(new SteakosaurusBurger()));
+                items.Add(new CretaceousCombo(new TRexKingBurger()));
+                items.Add(new CretaceousCombo(new VelociWrap()));
 
                 items.Add(new Brontowurst());
                 items.Add(new DinoNuggets());
@@ -94,6 +102,25 @@ namespace DinoDiner.Menu
                 items.Add(new Water());
 
                 return items;
+            }
+        }
+
+        public List<string> PossibleIngredients
+        {
+            get
+            {
+                List<string> ingre = new List<string>();
+                foreach(IMenuItem item in AvailableMenuItems)
+                {
+                    foreach(string s in item.Ingredients)
+                    {
+                        if(!ingre.Contains(s))
+                        {
+                            ingre.Add(s);
+                        }
+                    }
+                }
+                return ingre;
             }
         }
 
