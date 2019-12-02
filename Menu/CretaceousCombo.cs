@@ -97,7 +97,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return $"{Entree} Combo \n {Side} \n {Drink}";
+            return $"{Entree} Combo";
         }
 
         public List<string> Ingredients

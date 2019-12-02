@@ -8,12 +8,13 @@
         <div class="menu-item">
 
             <h1>Menu</h1>
-            <h2>Combos</h2>
 
-            @foreach (DinoDiner.Menu.IMenuItem item in Model.Menu.AvailableMenuItems)
+            @if (Model.menuCategory.Contains("Combo"))
             {
-                if (item is DinoDiner.Menu.CretaceousCombo combo)
+                <h2>Combos</h2>
+                @foreach (DinoDiner.Menu.CretaceousCombo combo in Model.combos)
                 {
+
                     <h3>@combo.Entree Combo</h3>
                     <ul style="list-style-type:none">
                         <li>Price: $@combo.Price</li>
@@ -26,83 +27,85 @@
                         }
                         </ul>
                     }
-                }
+            }
 
 
 
-
-            <h2>Entrees</h2>
-                @foreach (DinoDiner.Menu.IMenuItem item in Model.Menu.AvailableMenuItems)
+            @if (Model.menuCategory.Contains("Entree"))
+            {
+                <h2>Entrees</h2>
+                @foreach (DinoDiner.Menu.Entree entree in Model.entrees)
                 {
-                    if (item is DinoDiner.Menu.Entree entree)
-                    {
-                        <h3>@entree</h3>
-                        <ul style="list-style-type:none">
-                            <li>Price: $@entree.Price</li>
-                            <li>Calories: @entree.Calories</li>
-                            <li>
-                                Ingredients:
-                                @foreach (string s in entree.Ingredients)
-                                {
-                                <li class="text">@s</li>
-                            }
-                            </ul>
+
+                    <h3>@entree</h3>
+                    <ul style="list-style-type:none">
+                        <li>Price: $@entree.Price</li>
+                        <li>Calories: @entree.Calories</li>
+                        <li>
+                            Ingredients:
+                            @foreach (string s in entree.Ingredients)
+                            {
+                            <li class="text">@s</li>
                         }
+                        </ul>
+
                     }
+            }
 
-
+            @if (Model.menuCategory.Contains("Drink"))
+            {
                 <h2>Drinks</h2>
-                @foreach (DinoDiner.Menu.IMenuItem item in Model.Menu.AvailableMenuItems)
+                @foreach (DinoDiner.Menu.Drink drink in Model.drinks)
                 {
-                    if (item is DinoDiner.Menu.Drink drink)
-                    {
-                        <h3>@drink</h3>
-                        <ul style="list-style-type:none">
-                            <li>Price: $@drink.Price</li>
-                            <li>Calories: @drink.Calories</li>
-                            <li>
-                                Ingredients:
-                                @foreach (string s in drink.Ingredients)
-                                {
-                                <li class="text">@s</li>
-                            }
-                            </ul>
+                    <h3>@drink</h3>
+                    <ul style="list-style-type:none">
+                        <li>Price: $@drink.Price</li>
+                        <li>Calories: @drink.Calories</li>
+                        <li>
+                            Ingredients:
+                            @foreach (string s in drink.Ingredients)
+                            {
+                            <li class="text">@s</li>
                         }
+                        </ul>
                     }
+            }
 
+            @if (Model.menuCategory.Contains("Side"))
+            {
                 <h2>Sides</h2>
-                @foreach (DinoDiner.Menu.IMenuItem item in Model.Menu.AvailableMenuItems)
+                @foreach (DinoDiner.Menu.Side side in Model.sides)
                 {
-                    if (item is DinoDiner.Menu.Side side)
-                    {
-                        <h3>@side</h3>
-                        <ul style="list-style-type:none">
-                            <li>Price: $@side.Price</li>
-                            <li>Calories: @side.Calories</li>
-                            <li>
-                                Ingredients:
-                                @foreach (string s in side.Ingredients)
-                                {
-                                <li class="text">@s</li>
+
+                    <h3>@side</h3>
+                    <ul style="list-style-type:none">
+                        <li>Price: $@side.Price</li>
+                        <li>Calories: @side.Calories</li>
+                        <li>
+                            Ingredients:
+                            @foreach (string s in side.Ingredients)
+                            {
+                            <li class="text">@s</li>
                             }
-                            </ul>
-                        }
-                    }
+                        </ul>
+                }
+            }
+
             </div>
 
         <form method="post">
             <h4>Search</h4>
-            <input type="text" name="search" value="search" />
+            <input type="text" name="search" value="@Model.search" />
             <input type="submit" value="Search and Filter" id="searchandfilter" />
 
             <div class="checkboxList">
-                <h4>Menu Category</h4>
+                <h4>Show by Menu Category</h4>
                 <label>
                     <input type="checkbox" value="Combo" name="menuCategory" checked="@Model.menuCategory.Contains("Combo")" />
                     Combo
                 </label>
                 <label>
-                    <input type="checkbox" value="Emtree" name="menuCategory" checked="@Model.menuCategory.Contains("Entree")" />
+                    <input type="checkbox" value="Entree" name="menuCategory" checked="@Model.menuCategory.Contains("Entree")" />
                     Entree
                 </label>
                 <label>
@@ -116,23 +119,23 @@
             </div>
 
             <div class="priceFilter">
-                <h4>Price</h4>
+                <h4>Filter by Price</h4>
                 <label>
                     Min Price
-                    <input type="number" id="minimum-price" name="minimumPrice" />
+                    <input type="number" id="minimum-price" name="minimumPrice" value="@Model.minimumPrice"/>
                 </label>
                 <label>
                     Max Price
-                    <input type="number" id="maximum-price" name="maximumPrice" />
+                    <input type="number" id="maximum-price" name="maximumPrice" value="@Model.maximumPrice"/>
                 </label>
             </div>
 
             <div class="IngredientFilter">
-                <h4>Ingredient</h4>
+                <h4>Exclude Ingredient(s)</h4>
                 @foreach (string ingr in Model.Menu.PossibleIngredients)
                 {
                     <label>
-                        <input type="checkbox" value="@ingr" name="@ingr" />
+                        <input type="checkbox" value="@ingr" name="ingredients" checked ="@(Model.ingredients.Contains(ingr))"/>
                         @ingr
                     </label>
                 }
