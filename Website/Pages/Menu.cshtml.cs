@@ -25,96 +25,125 @@ namespace Website.Pages
         [BindProperty]
         public List<string> ingredients { get; set; } = new List<string>();
 
-        public List<Entree> entrees = new List<Entree>();
+        public IEnumerable<Entree> entrees = new List<Entree>();
 
-        public List<Drink> drinks = new List<Drink>();
+        public IEnumerable<Drink> drinks = new List<Drink>();
 
-        public List<Side> sides = new List<Side>();
+        public IEnumerable<Side> sides = new List<Side>();
 
-        public List<CretaceousCombo> combos = new List<CretaceousCombo>();
+        public IEnumerable<CretaceousCombo> combos = new List<CretaceousCombo>();
 
         public Menu Menu { get; } = new Menu();
 
         public void OnGet()
         {
+            List<CretaceousCombo> comboList = new List<CretaceousCombo>();
+            List<Drink> drinkList = new List<Drink>();
+            List<Side> sideList = new List<Side>();
+            List<Entree> entreeList = new List<Entree>();
+
             //populate items in lists
             foreach (IMenuItem item in Menu.AvailableMenuItems)
             {
+                
+
                 if(item is CretaceousCombo c)
                 {
-                    combos.Add(c);
+                    comboList.Add(c);
                 }
+                combos = comboList;
+
                 if (item is Drink d)
                 {
-                    drinks.Add(d);
+                    drinkList.Add(d);
                 }
+                drinks = drinkList;
+
                 if (item is Entree e)
                 {
-                    entrees.Add(e);
+                    entreeList.Add(e);
                 }
+                entrees = entreeList;
+
                 if (item is Side s)
                 {
-                    sides.Add(s);
+                    sideList.Add(s);
                 }
+                sides = sideList;
             }
         }
 
         public void OnPost()
         {
+            List<CretaceousCombo> comboList = new List<CretaceousCombo>();
+            List<Drink> drinkList = new List<Drink>();
+            List<Side> sideList = new List<Side>();
+            List<Entree> entreeList = new List<Entree>();
+
             //populate items in lists
             foreach (IMenuItem item in Menu.AvailableMenuItems)
             {
+
+
                 if (item is CretaceousCombo c)
                 {
-                    combos.Add(c);
+                    comboList.Add(c);
                 }
+                combos = comboList;
+
                 if (item is Drink d)
                 {
-                    drinks.Add(d);
+                    drinkList.Add(d);
                 }
+                drinks = drinkList;
+
                 if (item is Entree e)
                 {
-                    entrees.Add(e);
+                    entreeList.Add(e);
                 }
+                entrees = entreeList;
+
                 if (item is Side s)
                 {
-                    sides.Add(s);
+                    sideList.Add(s);
                 }
+                sides = sideList;
             }
 
             //check if we need to search
-            if(search != null)
+            if (search != null)
             {
-                combos = Search(combos, search);
-                drinks = Search(drinks, search);
-                entrees = Search(entrees, search);
-                sides = Search(sides, search);
+                //combos = Search(combos, search);
+                combos = combos.Where(c => c.ToString().Contains(search));
+                drinks = drinks.Where(d => d.ToString().Contains(search));
+                entrees = entrees.Where(e => e.ToString().Contains(search));
+                sides = sides.Where(s => s.ToString().Contains(search));
             }
 
             //check if we need to filter by price
             if(minimumPrice != null)
             {
-                combos = FilterByMinPrice(combos, minimumPrice);
-                drinks = FilterByMinPrice(drinks, minimumPrice);
-                entrees = FilterByMinPrice(entrees, minimumPrice);
-                sides = FilterByMinPrice(sides, minimumPrice);
+                combos = combos.Where(c => c.Price >= minimumPrice);
+                sides = sides.Where(s => s.Price >= minimumPrice);
+                entrees = entrees.Where(e => e.Price >= minimumPrice);
+                drinks = drinks.Where(d => d.Price >= minimumPrice);
             }
 
             if (maximumPrice != null)
             {
-                combos = FilterByMaxPrice(combos, maximumPrice);
-                drinks = FilterByMaxPrice(drinks, maximumPrice);
-                entrees = FilterByMaxPrice(entrees, maximumPrice);
-                sides = FilterByMaxPrice(sides, maximumPrice);
+                combos = combos.Where(c => c.Price <= maximumPrice);
+                sides = sides.Where(s => s.Price <= maximumPrice);
+                entrees = entrees.Where(e => e.Price <= maximumPrice);
+                drinks = drinks.Where(d => d.Price <= maximumPrice);
             }
 
             //check if we need to filter by ingredient
             if(ingredients.Count != 0)
             {
-                combos = FilterByIngredient(combos, ingredients);
-                drinks = FilterByIngredient(drinks, ingredients);
-                entrees = FilterByIngredient(entrees, ingredients);
-                sides = FilterByIngredient(sides, ingredients);
+                //combos = combos.Where(c => c.Ingredients.Where(str => ingredients.Contains(str)));
+                //sides = sides.Where(s => s.Price <= maximumPrice);
+                //entrees = entrees.Where(e => e.Price <= maximumPrice);
+                //drinks = drinks.Where(d => d.Price <= maximumPrice);
             }
         }
 
@@ -226,264 +255,7 @@ namespace Website.Pages
             return results;
         }
 
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<CretaceousCombo> FilterByMinPrice(List<CretaceousCombo> list, float? price)
-        {
-            List<CretaceousCombo> results = new List<CretaceousCombo>();
-
-            foreach (CretaceousCombo item in list)
-            {
-                if (price != null && item.Price >= price)
-                {
-                    results.Add(item);
-                }
-            }
-            
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<Entree> FilterByMinPrice(List<Entree> list, float? price)
-        {
-            List<Entree> results = new List<Entree>();
-
-            foreach (Entree item in list)
-            {
-                if (price != null && item.Price >= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<Side> FilterByMinPrice(List<Side> list, float? price)
-        {
-            List<Side> results = new List<Side>();
-
-            foreach (Side item in list)
-            {
-                if (price != null && item.Price >= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<Drink> FilterByMinPrice(List<Drink> list, float? price)
-        {
-            List<Drink> results = new List<Drink>();
-
-            foreach (Drink item in list)
-            {
-                if (price != null && item.Price >= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<CretaceousCombo> FilterByMaxPrice(List<CretaceousCombo> list, float? price)
-        {
-            List<CretaceousCombo> results = new List<CretaceousCombo>();
-
-            foreach (CretaceousCombo item in list)
-            {
-                if (price != null && item.Price <= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<Entree> FilterByMaxPrice(List<Entree> list, float? price)
-        {
-            List<Entree> results = new List<Entree>();
-
-            foreach (Entree item in list)
-            {
-                if (price != null && item.Price <= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<Side> FilterByMaxPrice(List<Side> list, float? price)
-        {
-            List<Side> results = new List<Side>();
-
-            foreach (Side item in list)
-            {
-                if (price != null && item.Price <= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches and returns all items in the given list to see if their price is above the given minimum
-        /// </summary>
-        /// <param name="list">The list to be searched through</param>
-        /// <param name="price">The minimum price the item must be</param>
-        /// <returns>The list with all items with price above the minimum</returns>
-        public List<Drink> FilterByMaxPrice(List<Drink> list, float? price)
-        {
-            List<Drink> results = new List<Drink>();
-
-            foreach (Drink item in list)
-            {
-                if (price != null && item.Price <= price)
-                {
-                    results.Add(item);
-                }
-            }
-
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches a list of Cretaceous Combos and returns all combos with the given string in them
-        /// </summary>
-        /// <param name="list">the list to be searched</param>
-        /// <param name="search">the string to search for</param>
-        /// <returns>A list containing all combos that contain that string</returns>
-        public List<CretaceousCombo> Search(List<CretaceousCombo> list, string search)
-        {
-            List<CretaceousCombo> results = new List<CretaceousCombo>();
-
-            foreach(CretaceousCombo item in list)
-            {
-                if(item.ToString().Contains(search))
-                {
-                    results.Add(item);
-                }
-            }
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches a list of Drinks and returns all combos with the given string in them
-        /// </summary>
-        /// <param name="list">the list to be searched</param>
-        /// <param name="search">the string to search for</param>
-        /// <returns>A list containing all combos that contain that string</returns>
-        public List<Drink> Search(List<Drink> list, string search)
-        {
-            List<Drink> results = new List<Drink>();
-
-            foreach (Drink item in list)
-            {
-                if (item.ToString().Contains(search))
-                {
-                    results.Add(item);
-                }
-            }
-
-            return results;
-        }
-        /// <summary>
-        /// Searches a list of Entrees and returns all combos with the given string in them
-        /// </summary>
-        /// <param name="list">the list to be searched</param>
-        /// <param name="search">the string to search for</param>
-        /// <returns>A list containing all combos that contain that string</returns>
-        public List<Entree> Search(List<Entree> list, string search)
-        {
-            List<Entree> results = new List<Entree>();
-
-            foreach (Entree item in list)
-            {
-                if (item.ToString().Contains(search))
-                {
-                    results.Add(item);
-                }
-            }
-
-            return results;
-        }
-
-        /// <summary>
-        /// Searches a list of Cretaceous Combos and returns all combos with the given string in them
-        /// </summary>
-        /// <param name="list">the list to be searched</param>
-        /// <param name="search">the string to search for</param>
-        /// <returns>A list containing all combos that contain that string</returns>
-        public List<Side> Search(List<Side> list, string search)
-        {
-            List<Side> results = new List<Side>();
-
-            foreach (Side item in list)
-            {
-                if (item.ToString().Contains(search))
-                {
-                    results.Add(item);
-                }
-            }
-
-            return results;
-        }
+       
 
     }//end of class
 }
